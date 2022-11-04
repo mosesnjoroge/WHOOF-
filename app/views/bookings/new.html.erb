@@ -1,3 +1,16 @@
-<div>
-    <%= render 'form', booking: @booking %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <%# checkout page listing about the price etc goes here %>
+        <h3>Add a dog to your Bookings</h3>
+        <%#= simple_form_for [@dogs, @bookings] do |f| %>
+          <%#= f.association :user, prompt: "Select a skill", input_html: {data: { controller: "tom-select"}} %>
+          <%#= f.submit class: "btn btn-outline-primary" %>
+          <%= link_to "Back", dogs_path, class: "btn btn-outline-danger"%>
+        <%# end %>
+        <%# please dont change the css and container stuff %>
+      </div>
+    </div>
+  </div>
 </div>

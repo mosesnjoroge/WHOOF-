@@ -10,8 +10,10 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%#= link_to "", mybookings_path, class: "btn btn-outline-danger"%>
+              <%= link_to "My Bookings", mybookings_path, class: "dropdown-item"%>
               <%= link_to "Rent Out Your Dog",new_dog, class: "dropdown-item" %>
-              <%= link_to "Rent a dog", new_dog_booking_path(:dog_id), class: "dropdown-item" %>
+              <%= link_to "Rent a dog", dogs_path, class: "dropdown-item" %>
               <%= link_to "Help", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
                 class: "dropdown-item" %>
