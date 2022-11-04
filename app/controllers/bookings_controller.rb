@@ -18,5 +18,5 @@ class BookingsController < ApplicationController
 
   def set_dog; end
 
-  def set_bookmark; end
+  def set_bookings; end
 end

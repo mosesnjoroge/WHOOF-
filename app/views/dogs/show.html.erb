@@ -1,2 +1,21 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<div class="container py-3">
+  <div class = "cards">
+    <%# @dogs.s.each do |movie| %>
+      <%# bookings = Bookings.find_by(user: @dogs, dogs: dogs) %>
+      <div class="card">
+        <div class="card-img">
+          <%#= cl_tag dog.cl_path, class: "card-product img" %>
+        </div>
+        <div class = "card-body">
+          <strong class="card-title"><%#= dog.name %><%#= dog.skills %></strong>
+          <p class="card-text"><%#= dog.name %></p>
+          <strong>Dog Bookings</strong>
+          <div class="card-text">
+            <small class="text-muted"><%#= bookings.comment %></small>
+          </div>
+          <%#= link_to "delete", dogs_path(dogs), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to unlist #{dog.name}?"}, class: 'text-danger' %>
+        </div>
+      </div>
+    <%# end %>
+  </div>
+</div>
