@@ -15,4 +15,13 @@ require "faker"
   newUser.password = "bruhhhhhhh"
   newUser.address = Faker::Address.street_address
   newUser.save!
+  woofer = Dog.new()
+  woofer.name = Faker::Name.name
+  woofer.breed = Faker::Creature::Dog.breed
+  woofer.skills = ["juggling", "skateboarding", "bomb sniffing"]
+  woofer.price = rand(20..100)
+  woofer.description = "a beatiful little puppy"
+  woofer.image_url = "https://loremflickr.com/320/240/dog"
+  woofer.user_id = newUser.id
+  woofer.save!
 end
