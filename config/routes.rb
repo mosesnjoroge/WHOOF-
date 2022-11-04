@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :dogs do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create destroy]
   end
   # list of all user bookings
   get '/my-bookings', to: 'bookings#index', as: 'mybookings'
