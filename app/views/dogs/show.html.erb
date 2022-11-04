@@ -4,16 +4,16 @@
       <%# bookings = Bookings.find_by(user: @dogs, dogs: dogs) %>
       <div class="card">
         <div class="card-img">
-          <%#= image_tag movie.poster_url, alt: movie.title, class: "card-product img" %>
+          <%#= cl_tag dog.cl_path, class: "card-product img" %>
         </div>
         <div class = "card-body">
-          <strong class="card-title"><%#= movie.title %> <span class="text-muted font-weight-normal"><%#= movie.rating %></strong>
-          <p class="card-text"><%#= movie.overview %></p>
+          <strong class="card-title"><%#= dog.name %> <span class="text-muted font-weight-normal"><%#= dog.skills %></strong>
+          <p class="card-text"><%#= dog.name %></p>
           <strong>Dog Bookings</strong>
           <div class="card-text">
             <small class="text-muted"><%#= bookings.comment %></small>
           </div>
-          <%#= link_to "delete", bookings_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{user.name} from your #{@dog.name} booking"}, class: 'text-danger' %>
+          <%#= link_to "delete", bookings_path(bookings), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{dog.name} from your #{@dog.name} booking"}, class: 'text-danger' %>
         </div>
       </div>
     <%# end %>
