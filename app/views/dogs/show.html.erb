@@ -11,7 +11,9 @@
           <p class="card-text"><%#= dog.name %></p>
           <strong>About this Dog </strong>
           <div class="card-text">
-            <small class="text-muted"><%#= bookings.comment %></small>
+            <p class="card-text">price:</p>
+            <p class="card-text">location:</p>
+            <small class="text-muted"><%#= dogs.price %></small>
           </div>
           <%= link_to 'ADD',new_dog_booking_path(:dog_id), class: 'btn btn-outline-success' %>
         </div>

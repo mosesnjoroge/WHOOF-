@@ -6,15 +6,15 @@
           <div class="card">
             <%#= cl_image_path('homepage_bckgrnd.jpg') %>
             <div class="card-body">
-              <h5 class="card-title">my dogs</h5>
+              <h5 class="card-title">my dogs cards</h5>
               <p class="card-text">price:</p>
               <p class="card-text">location:</p>
             </div>
           </div>
-          <%#= link_to render(:partial => 'shared/button'), dog_path %>
-          <%= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-success' %>
+          <%= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-danger' %>
         </div>
       </div>
     <%# end %>
   </div>
 </div>
+<%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
