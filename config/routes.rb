@@ -2,17 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :dogs do
-    resources :bookings, except: %i[destroy]
+    resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[destroy]
-  # get 'bookings/index'
-  # get 'bookings/new'
-  # get 'bookings/show'
-  # get 'bookings/edit'
-  # get 'bookings/destroy'
-  # get 'dogs/index'
-  # get 'dogs/new'
-  # get 'dogs/show'
-  # get 'dogs/update'
-  # get 'dogs/destroy'
+  # list of all user bookings
+  get '/my-bookings', to: 'bookings#index', as: 'mybookings'
+  # list a booking
+  get '/my-bookings/:id', to: 'bookings#show', as: 'mybooking'
+  # list all dogs(owner)
+  get '/my-dogs', to: 'dogs#index', as: 'mydogs'
+  # list a dog(owner)
+  get '/my-dogs/:id', to: 'dogs#show', as: 'mydog'
+  # update dog posting
+  patch '/my-dogs/:id', to: 'dogs#update'
 end
