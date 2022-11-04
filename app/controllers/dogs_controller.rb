@@ -16,6 +16,7 @@ class DogsController < ApplicationController
   def update
     if @dog.update(dog_params)
       redirect_to dogs_path, notice
+    end
   end
 
   def destroy
@@ -31,4 +32,5 @@ class DogsController < ApplicationController
   def dog_params
     params.require(:dog).permit(:name, :breed, :skills, :description, :image_url, :price, :user_id)
   end
+
 end
