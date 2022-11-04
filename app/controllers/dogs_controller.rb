@@ -14,6 +14,8 @@ class DogsController < ApplicationController
   end
 
   def update
+    if @dog.update(dog_params)
+      redirect_to dogs_path, notice
   end
 
   def destroy
