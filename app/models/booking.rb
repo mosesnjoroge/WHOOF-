@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :dog
-  belongs_to :rental, polymorphic: true
+  belongs_to :user
 
   validates_length_of :info, minimum: 10, maximum: 20, allow_blank: false
   validates :startdate, :enddate, :info, :user_id, :dog_id, presence: true

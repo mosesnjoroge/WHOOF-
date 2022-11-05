@@ -8,7 +8,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new()
+    @booking = Booking.new
+    @dog = Dog.find(params[:dog_id])
   end
 
   def create
@@ -16,11 +17,12 @@ class BookingsController < ApplicationController
     @dog = set_dog
     @user = current_user
     @booking.dog = @dog
-    @booking.user = @user
-    if @booking.save
-      redirect_to my_booking_path(@booking)
-    else render
-      :new
+    @booking.user = current_user
+    if @booking.save!
+      redirect_to root_path
+    else
+      raise
+      redirect_to dog_bookings_path
     end
   end
 
@@ -46,7 +48,7 @@ class BookingsController < ApplicationController
 
 
   def booking_params
-    params_require(:booking).permit(:startdate, :enddate)
+    params.require(:booking).permit(:startdate, :enddate)
   end
 
 end
