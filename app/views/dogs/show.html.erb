@@ -9,10 +9,11 @@
           <p class="card-text"><%#= dog.name %></p>
           <strong>About this Dog </strong>
           <div class="card-text">
-            <p class="card-text">name:<%=@dog.name%></p>
-            <p class="card-text">breed:<%=@dog.breed%></p>
-            <p class="card-text">price:<%=@dog.price%></p>
-            <p class="card-text">despription:<%=@dog.description%></p>
+            <img src= <%= @dog.image_url %>>
+            <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
+            <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
+            <p class="card-text"> <strong> Price: </strong><%=@dog.price%></p>
+            <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
           </div>
           <%= link_to 'Add a booking',new_dog_booking_path(@dog), class: 'btn btn-outline-success' %>
         </div>
