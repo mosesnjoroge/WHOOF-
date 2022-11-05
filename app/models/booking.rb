@@ -2,9 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :dog
   belongs_to :user
 
-  validates_length_of :info, minimum: 10, maximum: 20, allow_blank: false
-  validates :startdate, :enddate, :info, :user_id, :dog_id, presence: true
-  validates :startdate, comparison: { greater_than: :enddate }
+  validates :startdate, :enddate, :user_id, :dog_id, presence: true
+  validates :startdate, comparison: { less_than: :enddate }
   validate :not_the_same_date
 
   private
