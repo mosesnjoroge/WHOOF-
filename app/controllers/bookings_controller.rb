@@ -17,11 +17,9 @@ class BookingsController < ApplicationController
     @dog = set_dog
     @booking.dog = @dog
     @booking.user = current_user
-    raise
     if @booking.save!
       redirect_to root_path
     else
-      raise
       redirect_to dog_bookings_path
     end
   end
