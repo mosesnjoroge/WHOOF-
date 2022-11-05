@@ -15,9 +15,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @dog = set_dog
-    @user = current_user
     @booking.dog = @dog
     @booking.user = current_user
+    raise
     if @booking.save!
       redirect_to root_path
     else
