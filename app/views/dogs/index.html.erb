@@ -9,7 +9,7 @@
                     <h5 class="card-title"><%= doggo.name %></h5>
                     <p class="card-text">price: $<%= doggo.price %></p>
                     <p class="card-text">location: <%= doggo.user.address %></p>
-                    <%= link_to 'Check me out',dog_path(:dog_id), class: 'btn btn-outline-success' %>
+                    <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
                   </div>
               </div>
             </div>
