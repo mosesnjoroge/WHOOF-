@@ -3,12 +3,14 @@
       <div class="col-12 col-md-6 offset-lg-3">
         <div class="bg-white rounded p-3 shadow">
           <h2 class = 'text-center'>Post your Dog</h2>
-          <%#= simple_form_for @dogs do |f| %>
-            <%#= f.input :name, placeholder: 'Morty' %>
+          <%= simple_form_for @dogs do |f| %>
+            <%= f.input :name, placeholder: 'Morty' %>
+            <%= f.input :price, placeholder: '100 pesos' %>
+            <%= f.input :breed, placeholder: 'Corgi' %>
             <%#= f.input :photo, as: :file %>
-            <%#= f.submit class: 'btn btn-outline-success' %>
+            <%= f.submit class: 'btn btn-outline-success' %>
             <%= link_to "Cancel", mydogs_url, class: 'btn btn-outline-danger' %>
-          <%# end %>
+          <% end %>
         </div>
       </div>
     </div>
