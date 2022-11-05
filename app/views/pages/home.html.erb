@@ -6,11 +6,11 @@
 </div>
 <div class = 'container py-5'>
   <div class="cards">
+      <div class="row">
     <% @dogs.each do |dog|  %>
-      <div class="row row-cols-3 row-cols-md-2 g-4">
-        <div class="col">
+        <div class="col-2 col-lg-4">
           <div class="card">
-            <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445" alt="Girl in a jacket" class="card-img-top">
+            <img src= <%= dog.image_url %>>
             <div class="card-body">
               <p class="card-text">price:<%= dog.price %></p>
               <p class="card-text">breed:<%= dog.breed %></p>
@@ -20,7 +20,15 @@
               <%= link_to 'ADD',new_dog_booking_path(:dog_id), class: 'btn btn-outline-success' %>
             <% end %>
         </div>
-      </div>
     <% end %>
+    <%# <div class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success">Add your dog</div>
+  <div class="card-body text-success">
+    <p class="card-body">List your own dog so that others can see it.</p>
+  </div>
+  <%= link_to 'ADD',new_user_session_path, class: 'btn btn-success mb-3' %>
+<%# </div>
+</div> %>
+      </div>
   </div>
 </div>
