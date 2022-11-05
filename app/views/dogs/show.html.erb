@@ -1,18 +1,20 @@
 <div class="container py-3">
   <div class = "cards">
-    <%# @dogs.s.each do |movie| %>
+    <%# @dogs.bookings.each do |dog_booking| %>
       <%# bookings = Bookings.find_by(user: @dogs, dogs: dogs) %>
       <div class="card">
         <div class="card-img">
-          <%#= cl_tag dog.cl_path, class: "card-product img" %>
+          <%= dog.image_url , class: "card-product img" %>
         </div>
         <div class = "card-body">
           <strong class="card-title"><%#= dog.name %><%#= dog.skills %></strong>
           <p class="card-text"><%#= dog.name %></p>
           <strong>About this Dog </strong>
           <div class="card-text">
-            <p class="card-text">price:</p>
-            <p class="card-text">location:</p>
+            <p class="card-text">name:<%#=dog_booking.name%></p>
+            <p class="card-text">breed:<%#=dog_booking.breed%></p>
+            <p class="card-text">price:<%#=dog_booking.price%></p>
+            <p class="card-text">despription:<%#=dog_booking.description%></p>
             <small class="text-muted"><%#= dogs.price %></small>
           </div>
           <%= link_to 'ADD',new_dog_booking_path(:dog_id), class: 'btn btn-outline-success' %>
