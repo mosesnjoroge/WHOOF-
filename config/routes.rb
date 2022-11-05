@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get '/my-dogs/:id', to: 'dogs#show', as: 'mydog'
   # update dog posting
   patch '/my-dogs/:id', to: 'dogs#update'
+  # checkout route
+  get '/checkout', to: 'pages#checkout'
 end
