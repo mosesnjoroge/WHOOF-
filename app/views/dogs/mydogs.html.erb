@@ -1,20 +1,20 @@
 <div class = 'container py-3'>
   <div class="cards">
-    <%# @dogs.each do |doggo|  %>
+    <%# @dogs.user each do |doggo|  %>
       <div class="row row-cols-3 row-cols-md-2 g-4">
         <div class="col">
           <div class="card">
-            <img src="...img goes here" class="card-img-top" alt="...">
+            <%#= cl_image_path('homepage_bckgrnd.jpg') %>
             <div class="card-body">
+              <h5 class="card-title">my dogs cards</h5>
               <p class="card-text">price:</p>
               <p class="card-text">location:</p>
             </div>
           </div>
-            <%if user_signed_in? %>
-              <%= link_to 'ADD',new_dog_booking_path(:dog_id), class: 'btn btn-outline-success' %>
-            <% end %>
+          <%= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-danger' %>
         </div>
       </div>
     <%# end %>
   </div>
 </div>
+<%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
