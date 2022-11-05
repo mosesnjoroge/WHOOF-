@@ -6,14 +6,14 @@
 </div>
 <div class = 'container py-5'>
   <div class="cards">
-    <%# @dogs.each do |dog|  %>
+    <% @dogs.each do |dog|  %>
       <div class="row row-cols-3 row-cols-md-2 g-4">
         <div class="col">
           <div class="card">
-            <%#= image_tag dog.img_url class="card-img-top"%>
+            <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445" alt="Girl in a jacket" class="card-img-top">
             <div class="card-body">
-              <p class="card-text">price:<%#= dog.price %></p>
-              <p class="card-text">breed:<%#= dog.breed %></p>
+              <p class="card-text">price:<%= dog.price %></p>
+              <p class="card-text">breed:<%= dog.breed %></p>
             </div>
           </div>
             <%if user_signed_in? %>
@@ -21,6 +21,6 @@
             <% end %>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   </div>
 </div>
