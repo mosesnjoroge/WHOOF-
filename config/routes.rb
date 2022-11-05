@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # list a booking
   get '/my-bookings/:id', to: 'bookings#show', as: 'mybooking'
   # list all dogs(owner)
-  get '/my-dogs', to: 'dogs#mydogs', as: 'mydogs'
+  get '/my-dogs', to: 'dogs#index', as: 'mydogs'
   # list a dog(owner)
   get '/my-dogs/:id', to: 'dogs#show', as: 'mydog'
   # update dog posting
