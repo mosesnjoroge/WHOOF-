@@ -1,9 +1,13 @@
 class DogsController < ApplicationController
 
-  before_action :set_dog, only: [:show, :update, :destroy]
+  before_action :set_dog, only: [:show, :update, :destroy,]
 
   def index
-    @dogs = Dog.all
+    @dogs = current_user.dogs
+  end
+
+  def mydogs
+    @dogs = current_user.dogs
   end
 
   def new
@@ -11,6 +15,10 @@ class DogsController < ApplicationController
   end
 
   def show
+  end
+
+  def create
+    @dog.update(dog_params)
   end
 
   def update
