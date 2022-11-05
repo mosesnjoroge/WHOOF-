@@ -7,8 +7,8 @@
             <%#= cl_image_path('homepage_bckgrnd.jpg') %>
             <div class="card-body">
               <h5 class="card-title">my dogs cards</h5>
-              <p class="card-text">price:</p>
-              <p class="card-text">location:</p>
+              <p class="card-text">breed:<%=dog.breed%></p>
+              <p class="card-text">price:<%=dog.price%></p>
             </div>
           </div>
           <%= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-danger' %>

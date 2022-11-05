@@ -1,7 +1,7 @@
 <div class="content">
   <div class="cards">
     <%# @bookings.each do |dog| %>
-      <div class="card-category" <%#=cl_image_path('homepage_bckgrnd.jpg') %>>
+      <div class="card-category" <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill%>>
           <%#= link_to mybooking_path(:booking_id) do %>
               <%#= dog.name %>
           <%# end %>

@@ -1,13 +1,19 @@
-<div class = 'container py-3'>
+<div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%#= cl_image_url('https://res.cloudinary.com/dtxxea3qi/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1667666704/charlesdeluvio-Mv9hjnEUHR4-unsplash_rjtbci.jpg') %>);">
+  <div class="container">
+    <h1 class = "text-center">Welcome to WHOOF your one-stop shop for cuddly vibes</h1>
+    <%= link_to "See All",dogs_url, class: "btn btn-outline-success"%>
+  </div>
+</div>
+<div class = 'container py-5'>
   <div class="cards">
-    <%# @dogs.each do |doggo|  %>
+    <%# @dogs.each do |dog|  %>
       <div class="row row-cols-3 row-cols-md-2 g-4">
         <div class="col">
           <div class="card">
-            <img src="...img goes here" class="card-img-top" alt="...">
+            <%#= image_tag dog.img_url class="card-img-top"%>
             <div class="card-body">
-              <p class="card-text">price:</p>
-              <p class="card-text">location:</p>
+              <p class="card-text">price:<%#= dog.price %></p>
+              <p class="card-text">breed:<%#= dog.breed %></p>
             </div>
           </div>
             <%if user_signed_in? %>
