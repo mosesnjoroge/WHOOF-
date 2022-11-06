@@ -1,6 +1,6 @@
 <div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445);">
   <div class="container">
-    <h1 class = "text-center">Welcome to WHOOF your one-stop shop for cuddly vibes</h1>
+    <h1 class="d-flex justify-content-center">Welcome to WHOOF your one-stop shop for cuddly vibes</h1>
     <%= link_to "See All",dogs_url, class: "btn btn-success"%>
   </div>
 </div>
@@ -8,18 +8,18 @@
   <div class="cards">
       <div class="row">
     <% @dogs.each do |dog|  %>
-        <div class="col-2 col-lg-4">
-          <div class="card">
-            <img src= <%= dog.image_url %>>
-            <div class="card-body">
-              <p class="card-text">price:<%= dog.price %></p>
-              <p class="card-text">breed:<%= dog.breed %></p>
-            </div>
-          </div>
+      <div class="col-2 col-lg-4">
+        <div class="card">
+          <img src= <%= dog.image_url %>>
+          <div class="card-body">
+            <p class="card-text">price:<%= dog.price %></p>
+            <p class="card-text">breed:<%= dog.breed %></p>
             <%if user_signed_in? %>
-              <%= link_to 'ADD',new_dog_booking_path(:dog_id), class: 'btn btn-outline-success' %>
+              <%#= link_to 'ADD',new_dog_booking_path, class: 'btn btn-outline-success' %>
             <% end %>
+          </div>
         </div>
+      </div>
     <% end %>
     <%# <div class="card border-success mb-3" style="max-width: 18rem;">
   <div class="card-header bg-transparent border-success">Add your dog</div>
