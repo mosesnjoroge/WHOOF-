@@ -8,18 +8,18 @@
   <div class="cards">
       <div class="row">
     <% @dogs.each do |dog|  %>
-        <div class="col-2 col-lg-4">
-          <div class="card">
-            <img src= <%= dog.image_url %>>
-            <div class="card-body">
-              <p class="card-text">price:<%= dog.price %></p>
-              <p class="card-text">breed:<%= dog.breed %></p>
-            </div>
-          </div>
+      <div class="col-2 col-lg-4">
+        <div class="card">
+          <img src= <%= dog.image_url %>>
+          <div class="card-body">
+            <p class="card-text">price:<%= dog.price %></p>
+            <p class="card-text">breed:<%= dog.breed %></p>
             <%if user_signed_in? %>
               <%= link_to 'ADD',new_dog_booking_path(:dog_id), class: 'btn btn-outline-success' %>
             <% end %>
+          </div>
         </div>
+      </div>
     <% end %>
     <%# <div class="card border-success mb-3" style="max-width: 18rem;">
   <div class="card-header bg-transparent border-success">Add your dog</div>
