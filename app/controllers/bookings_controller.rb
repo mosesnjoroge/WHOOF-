@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   def show
@@ -17,8 +18,8 @@ class BookingsController < ApplicationController
     @dog = set_dog
     @booking.dog = @dog
     @booking.user = current_user
-    if @booking.save!
-      redirect_to root_path
+    if @booking.save
+      redirect_to mybookings_path, notice: 'booking was successfully created'
     else
       redirect_to dog_bookings_path
     end
@@ -37,11 +38,11 @@ class BookingsController < ApplicationController
   private
 
   def set_dog
-    Dog.find(params[:dog_id])
+    @dog = Dog.find(params[:dog_id])
   end
 
   def set_booking
-    Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
 
