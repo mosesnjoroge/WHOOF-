@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    # moses was here
     @bookings = current_user.dog.bookings
   end
 
@@ -45,9 +46,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-
   def booking_params
     params.require(:booking).permit(:startdate, :enddate)
   end
-
 end
