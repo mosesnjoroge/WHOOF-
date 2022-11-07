@@ -1,14 +1,13 @@
-<div>
-    <%= render 'shared/banner'%>
-    <%= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-danger' %>
+<%= render 'shared/banner'%>
+<div class = "p-4 d-flex justify-content-end">
     <%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
 </div>
 <div class = 'container py-3'>
-  <div class="cards">
+  <%# <div class="cards"> %>
     <%# @dogs.each do |dog|  %>
       <div class="row row-cols-3 row-cols-md-2 g-4">
         <div class="col">
-          <div class="card">
+          <%# <div class="card"> %>
             <div class="card-body">
               <%#= link_to dog_path(dog) do %>
                 <%#= dog.cl_image_path('IMAGE_FROM_LIBRARY') %>
@@ -17,6 +16,7 @@
                 <%#= dog.description %>
                 <%#= dog.price %>
               <%# end %>
+              <%#= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-danger' %>
             </div>
           </div>
         </div>

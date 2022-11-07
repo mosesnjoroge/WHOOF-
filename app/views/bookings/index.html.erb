@@ -1,8 +1,9 @@
+<%= render 'shared/banner'%>
 <div class="container">
-  <div class = " p-4 d-flex">
-    <p>These are all your active listings:</p>
-    <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success' %>
+  <div class = "p-4 d-flex justify-content-end">
+    <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
   </div>
+  <p>These are all your active listings:</p>
   <div class="cards">
     <%# @bookings.each do |booking| %>
       <%# @dogs.each do |dog| %>
