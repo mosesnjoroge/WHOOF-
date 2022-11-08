@@ -25,10 +25,19 @@ class DogsController < ApplicationController
     # @edit_dog = Dog.find(set_dog)
   end
 
+  # moses was here
+  def edit
+    @edit_dog = Dog.find(params[:id])
+  end
+
   def update
     # @edit_dog = Dog.find(set_dog)
     # @edit_dog.update(dog_params)
     redirect_to dogs_path, notice
+    # what moses found
+    # if @dog.update(dog_params)
+    #   redirect_to dogs_path, notice
+    # end
   end
 
   def destroy
