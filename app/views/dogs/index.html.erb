@@ -4,16 +4,16 @@
         <% @dogs.each do |doggo|  %>
             <div class="col-42 col-lg-4 my-3">
               <div class="card">
-                <img src= <%= doggo.image_url %>>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= doggo.name %></h5>
-                    <p class="card-text">Breed: <%= doggo.breed %></p>
-                    <p class="card-text">location: <%= doggo.user.address %></p>
-                    <p class="card-text">price: $<%= doggo.price %></p>
-                        <div class="col-xs-1" align="center">
-                          <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
-                        </div>
-                  </div>
+                <img src= <%= doggo.image_url %> >
+                <div class="card-body">
+                  <h5 class="card-title"><%= doggo.name %></h5>
+                  <p class="card-text">Breed: <%= doggo.breed %></p>
+                  <p class="card-text">location: <%= doggo.user.address %></p>
+                  <p class="card-text">price: $<%= doggo.price %></p>
+                      <div class="col-xs-1" align="center">
+                        <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
+                      </div>
+                </div>
               </div>
             </div>
         <% end %>

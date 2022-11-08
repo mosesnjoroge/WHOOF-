@@ -1,11 +1,12 @@
 <div class = 'container py-3'>
   <div class="cards">
-    <%# @dogs.user each do |doggo|  %>
+    <% @dogs.each do |dog|  %>
       <div class="row row-cols-3 row-cols-md-2 g-4">
         <div class="col">
           <div class="card">
             <%#= cl_image_path('homepage_bckgrnd.jpg') %>
             <div class="card-body">
+              <img src= <%= dog.image_url %> >
               <h5 class="card-title">my dogs cards</h5>
               <p class="card-text">breed:<%=dog.breed%></p>
               <p class="card-text">price:<%=dog.price%></p>
@@ -14,7 +15,7 @@
           <%= link_to 'Update',edit_dog_path(:dog_id), class: 'btn btn-outline-danger' %>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   </div>
 </div>
 <%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
