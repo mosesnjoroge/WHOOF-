@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :dogs, through: :bookings
+  has_many :dogs
   has_many :bookings, through: :dogs
   has_many :rentals, class_name: 'Booking'
 end
