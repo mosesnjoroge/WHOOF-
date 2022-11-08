@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: %i[show index]
+  before_action :set_dog, only: %i[show]
 
   def index
     # moses was here
@@ -8,8 +9,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @booking = set_booking
-    @dog = Dog.new
+    @booking = set_booking
+    # @booking.current_user = @dog
   end
 
   def new
@@ -42,7 +43,7 @@ class BookingsController < ApplicationController
   private
 
   def set_dog
-    @dog = Dog.find(params[:dog_id])
+    @dog = Dog.find(params[:id])
   end
 
   def set_booking
