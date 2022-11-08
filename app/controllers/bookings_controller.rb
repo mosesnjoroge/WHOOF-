@@ -8,7 +8,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = set_booking
+    # @booking = set_booking
+    @dog = Dog.new
   end
 
   def new

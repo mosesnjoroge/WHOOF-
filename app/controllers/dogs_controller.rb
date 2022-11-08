@@ -8,7 +8,7 @@ class DogsController < ApplicationController
 
   # moses was here
   def mydogs
-    @dogs = current_user.dogs
+    # @dogs = current_user.dogs
     @dogs = Dog.all
   end
   def new
