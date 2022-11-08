@@ -1,17 +1,18 @@
+<%= render 'shared/banner'%>
 <div class="container">
+  <div class = "p-4 d-flex justify-content-end">
+    <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
+  </div>
   <p>These are all your active listings:</p>
-    <div class="cards">
-      <% @bookings.each do |booking| %>
-        <% @dogs.each do |dog| %>
-          <td><%= dog.img_url %></td>
-          <td><%= dog.price %></td>
-        <% end %>
-          <td><%= booking.startDate %></td>
-          <td><%= booking.endDate %></td>
-        </tr>
-      <% end %>
-    </div>
-</div>
-
-  <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success' %>
+  <div class="cards">
+    <%# @bookings.each do |booking| %>
+      <%# @dogs.each do |dog| %>
+        <td><%#= dog.img_url %></td>
+        <td><%#= dog.price %></td>
+      <%# end %>
+        <td><%#= booking.startDate %></td>
+        <td><%#= booking.endDate %></td>
+      </tr>
+    <%# end %>
+  </div>
 </div>
