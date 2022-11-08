@@ -1,17 +1,18 @@
 <div class="container">
   <p>These are all your active listings:</p>
+  <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success' %>
     <div class="cards">
-      <% @bookings.each do |booking| %>
-        <% @dogs.each do |dog| %>
-          <td><%= dog.img_url %></td>
-          <td><%= dog.price %></td>
-        <% end %>
-          <td><%= booking.startDate %></td>
-          <td><%= booking.endDate %></td>
-        </tr>
-      <% end %>
+      <div class="row row-cols-3 row-cols-md-2 g-4">
+        <div class="col">
+            <% @bookings.each do |booking| %>
+              <div class="card">
+                <%= booking.startdate %>
+                <%= booking.enddate %>
+              </div>
+            <% end %>
+        </div>
+      </div>
     </div>
 </div>
 
-  <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success' %>
 </div>

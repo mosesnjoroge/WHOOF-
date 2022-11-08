@@ -3,6 +3,8 @@ class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :update, :destroy]
 
   def index
+
+    # @dogs = current_user.dogs
     @dogs = Dog.all
   end
 

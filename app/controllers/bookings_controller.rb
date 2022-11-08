@@ -1,7 +1,10 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+
   def index
-    @bookings = Booking.all
+    # moses was here
     @bookings = current_user.bookings
+    @bookings = Booking.all
   end
 
   def show
