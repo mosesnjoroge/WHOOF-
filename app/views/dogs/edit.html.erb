@@ -2,16 +2,16 @@
     <div class="row">
       <div class="col-12 offset-lg-3">
         <div class="bg-white rounded p-3 shadow">
-          <h1> What would you like change about this dog : <%= @edit_dog.name %> </h1>
-          <%= form_for(@edit_dog) do |f| %>
+          <h1> What would you like change about this dog : <%= @dog.name %> </h1>
+          <%= simple_form_for(@dog) do |f| %>
             <%= f.label :name %>
             <%= f.text_field :name %>
             <%= f.label :breed %>
             <%= f.text_field :breed %>
-            <%#= f.input :photo, as: :file %>
+            <%= f.input :photo, as: :file %>
             <%= f.label :skills %>
             <%= f.text_field :skills %>
-            <%= f.submit, class: 'btn btn-outline-success' %>
+            <%= f.submit class: 'btn btn-outline-success' %>
             <%= link_to 'Back',mydogs_url, class: 'btn btn-outline-danger' %>
           <% end %>
         </div>
