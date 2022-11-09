@@ -6,11 +6,23 @@ class DogsController < ApplicationController
     @dogs = Dog.all
   end
 
+  # moses was here
+  def mydogs
+    # @dogs = current_user.dogs
+    @dogs = Dog.all
+  end
   def new
     @dog = Dog.new
   end
 
+  # moses was here
   def show
+     @dog = set_dog
+  end
+
+  # moses was here
+  def edit
+    # @edit_dog = Dog.find(set_dog)
   end
 
   # moses was here
@@ -19,10 +31,9 @@ class DogsController < ApplicationController
   end
 
   def update
-    # needs some work moses was here
-    @edit_dog = Dog.find(set_dog)
-    @edit_dog.update(dog_params)
-    redirect_to mydogs_path
+    # @edit_dog = Dog.find(set_dog)
+    # @edit_dog.update(dog_params)
+    redirect_to dogs_path, notice
     # what moses found
     # if @dog.update(dog_params)
     #   redirect_to dogs_path, notice
