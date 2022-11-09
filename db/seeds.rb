@@ -9,8 +9,6 @@
 require "faker"
 require "open-uri"
 
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-
 
 20.times do
   newUser = User.new()
@@ -24,7 +22,6 @@ file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-C
   woofer.skills = ["juggling", "skateboarding", "bomb sniffing"]
   woofer.price = rand(20..100)
   woofer.description = "a beatiful little puppy"
-  woofer.photo.attach(io: file, filename: "dog.png", content_type: "image/png")
   woofer.user_id = newUser.id
   woofer.save!
 end
