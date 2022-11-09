@@ -10,11 +10,10 @@
     <div class="d-flex justify-content-center p-3">
       <h2 clas>The most popular dogs this week</h2>
     </div>
-  <div class="cards">
+  <div class="card border-0">
       <div class="row">
-    <% @dogs[0,3].each do |dog|  %>
-      <div class="col-3 col-lg-4">
-        <div class="card">
+    <% @dogs[0,3].each do |dog|%>
+      <div class="col-sm-1 col-md-6 col-lg-4 ">
           <img src= <%= dog.image_url %>>
           <div class="card-body">
             <p class="card-text">Breed: <%= dog.breed %></p>
@@ -25,7 +24,7 @@
                 <%= link_to 'BOOK NOW',new_dog_booking_path(dog), class: 'btn btn-outline-success' %>
              </div>
             <% end %>
-          </div>
+
         </div>
       </div>
     <% end %>

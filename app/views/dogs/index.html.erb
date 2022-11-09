@@ -1,9 +1,8 @@
 <div class = 'container py-3'>
-  <div class="cards">
+  <div class="card border-0">
       <div class="row">
         <% @dogs.each do |doggo|  %>
-            <div class="col-2 col-lg-4 my-3">
-              <div class="card">
+            <div class="col-sm-1 col-md-6 col-lg-4 my-3">
                 <img src= <%= doggo.image_url %> >
                 <div class="card-body">
                   <h5 class="card-title"><%= doggo.name %></h5>
@@ -14,7 +13,7 @@
                         <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
                       </div>
                 </div>
-              </div>
+
             </div>
         <% end %>
       </div>
