@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
   private
 
   def set_dog
-    @dog = Dog.find(params[:dog_id])
+    @dog = Dog.find(params[:id])
   end
 
   def set_booking
