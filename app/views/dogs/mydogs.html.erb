@@ -3,21 +3,22 @@
     <%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
 </div>
 <div class = 'container py-3'>
-  <div class="cards">
-    <% @dogs.each do |dog|  %>
-      <div class="row row-cols-3 row-cols-md-2 g-4">
-        <div class="col">
-          <%# <div class="card"> %>
-            <div class="card-body">
-
+  <div class="row row-cols-3 row-cols-md-2 g-4">
+    <div class="cards">
+      <%@dogs.each do |dog|  %>
+        <div class = "col">
+          <div class="card">
+            <%= link_to mydog_path(dog) do %>
               <img src= <%= dog.image_url %> >
-              <h5 class="card-title">my dogs cards</h5>
-              <p class="card-text">breed:<%=dog.breed%></p>
-              <p class="card-text">price:<%=dog.price%></p>
-            </div>
+              <div class = "d-flex">
+                <p class="card-text">Name:<%=dog.name%></p>
+                <p class="card-text">Breed:<%=dog.breed%></p>
+                <p class="card-text">Price:$<%=dog.price%></p>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
