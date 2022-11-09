@@ -4,7 +4,7 @@
         <% @dogs.each do |doggo|  %>
             <div class="col-42 col-lg-4 my-3">
               <div class="card">
-                <img src= <%= doggo.image_url %> >
+                <%= cl_image_tag doggo.photo.key, height: 300, width: 400, crop: :fill %>
                 <div class="card-body">
                   <h5 class="card-title"><%= doggo.name %></h5>
                   <p class="card-text">Breed: <%= doggo.breed %></p>

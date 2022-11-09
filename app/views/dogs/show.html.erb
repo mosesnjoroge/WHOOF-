@@ -9,7 +9,7 @@
           <p class="card-text"><%#= dog.name %></p>
           <strong>About <%= @dog.name %> </strong>
           <div class="card-text">
-            <img src= <%= @dog.image_url %>>
+            <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
             <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
             <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
             <p class="card-text"> <strong> Price: </strong><%=@dog.price%></p>

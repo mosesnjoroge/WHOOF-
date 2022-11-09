@@ -9,8 +9,7 @@
         <div class="col">
           <%# <div class="card"> %>
             <div class="card-body">
-
-              <img src= <%= dog.image_url %> >
+              <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
               <h5 class="card-title">my dogs cards</h5>
               <p class="card-text">breed:<%=dog.breed%></p>
               <p class="card-text">price:<%=dog.price%></p>
