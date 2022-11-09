@@ -11,7 +11,7 @@ class DogsController < ApplicationController
     # @dogs = current_user.dogs
     @dogs = Dog.all
   end
-
+  
   def new
     @dog = Dog.new
   end

@@ -1,38 +1,35 @@
 <div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445);">
   <div class="container">
     <h1 class="d-flex justify-content-center">Welcome to WHOOF your one-stop shop for cuddly vibes</h1>
-    <%= link_to "See All",dogs_url, class: "btn btn-success"%>
+      <div class="d-flex justify-content-center mt-5">
+         <%= link_to "See All",dogs_url, class: "btn btn-success"%>
+      </div>
   </div>
 </div>
-<div class = 'container py-5'>
-  <div class="cards">
+<div class = 'container pt-2'>
+    <div class="d-flex justify-content-center p-3">
+      <h2 clas>The most popular dogs this week</h2>
+    </div>
+  <div class="card border-0">
       <div class="row">
-    <% @dogs.each do |dog|  %>
-      <div class="col-2 col-lg-4">
-        <div class="card">
-        <% if dog.photo.present? %>
-          <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
-          <div class="card-body">
-            <p class="card-text">price:<%= dog.price %></p>
-            <p class="card-text">breed:<%= dog.breed %></p>
-          </div>
-           <%else%>
-           <div class="card-body">
-            <p class="card-text">price:<%= dog.price %></p>
-            <p class="card-text">breed:<%= dog.breed %></p>
-          </div>
-          <%end%>
+        <% @dogs.each do |dog|  %>
+          <div class="col-2 col-lg-4">
+            <div class="card">
+            <% if dog.photo.present? %>
+              <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
+              <div class="card-body">
+                <p class="card-text">price:<%= dog.price %></p>
+                <p class="card-text">breed:<%= dog.breed %></p>
+              </div>
+            <%else%>
+               <div class="card-body">
+                <p class="card-text">price:<%= dog.price %></p>
+                <p class="card-text">breed:<%= dog.breed %></p>
+              </div>
+            <%end%>
         </div>
       </div>
     <% end %>
-    <%# <div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success">Add your dog</div>
-  <div class="card-body text-success">
-    <p class="card-body">List your own dog so that others can see it.</p>
-  </div>
-  <%= link_to 'ADD',new_user_session_path, class: 'btn btn-success mb-3' %>
-<%# </div>
-</div> %>
       </div>
   </div>
 </div>
