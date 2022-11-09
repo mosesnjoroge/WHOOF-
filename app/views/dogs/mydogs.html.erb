@@ -8,12 +8,20 @@
       <div class="row row-cols-3 row-cols-md-2 g-4">
         <div class="col">
           <%# <div class="card"> %>
+          <% if dog.photo.present? %>
             <div class="card-body">
               <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
               <h5 class="card-title">my dogs cards</h5>
               <p class="card-text">breed:<%=dog.breed%></p>
               <p class="card-text">price:<%=dog.price%></p>
             </div>
+            <%else%>
+             <div class="card-body">
+              <h5 class="card-title">my dogs cards</h5>
+              <p class="card-text">breed:<%=dog.breed%></p>
+              <p class="card-text">price:<%=dog.price%></p>
+            </div>
+            <%end%>
           </div>
         </div>
       </div>

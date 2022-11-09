@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
 
-  before_action :set_dog, only: [:show, :update, :destroy]
+  before_action :set_dog, only: [:show, :update, :destroy, :edit]
 
   def index
     @dogs = Dog.all
@@ -23,22 +23,15 @@ class DogsController < ApplicationController
 
   # moses was here
   def edit
-    # @edit_dog = Dog.find(set_dog)
-  end
 
-  # moses was here
-  def edit
-    @edit_dog = Dog.find(params[:id])
   end
 
   def update
-    # @edit_dog = Dog.find(set_dog)
-    # @edit_dog.update(dog_params)
-    redirect_to dogs_path, notice
-    # what moses found
-    # if @dog.update(dog_params)
-    #   redirect_to dogs_path, notice
-    # end
+    if @dog.update(dog_params)
+    redirect_to mydog_path
+    else
+      redirect_to dog_bookings_path
+    end
   end
 
   def destroy
