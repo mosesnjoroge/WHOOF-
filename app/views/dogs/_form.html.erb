@@ -8,7 +8,7 @@
           <%= f.input :breed, placeholder: 'Corgi' %>
           <%= f.input :skills, placeholder: 'driving your car' %>
           <%= f.input :description, placeholder: 'Corgi that really cool' %>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :photo, as: :file, direct_upload: true %>
           <%= f.input :price, placeholder: '100 pesos',:collection => 1..300 %>
           <%= f.submit class: 'btn btn-outline-success' %>
           <%= link_to "Cancel", mydogs_url, class: 'btn btn-outline-danger' %>

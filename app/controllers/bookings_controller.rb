@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :set_dog, only: %i[create]
-  before_action :set_booking, only: %i[edit update]
+  before_action :set_dog, only: %i[show create]
+  before_action :set_booking, only: %i[show edit update]
 
   def index
     # moses was here
@@ -9,14 +9,11 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-    @booking = set_booking
-    # @booking.current_user = @dog
-  end
+  def show;end
 
   def new
     @booking = Booking.new
-    @dog = Dog.find(params[:dog_id])
+    @rentals = Booking.find_by(params[:booking])
   end
 
   def create
@@ -24,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.dog = @dog
     @booking.user = current_user
     if @booking.save
-      redirect_to mybookings_path, notice: 'booking was successfully created'
+      redirect_to mybooking_path, notice: 'booking was successfully created'
     else
       redirect_to dog_bookings_path
     end
