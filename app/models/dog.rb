@@ -5,5 +5,5 @@ class Dog < ApplicationRecord
   validates :name, presence: true, length: { in: 3..50 }, uniqueness: true
   validates :breed, length: { in: 3..50 }
   validates :price, numericality: { only_integer: true }
-  validates :description, presence: true, length: { in: 15..280 }
+  validates :description, presence: true
 end

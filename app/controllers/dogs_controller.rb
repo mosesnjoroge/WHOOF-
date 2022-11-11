@@ -18,10 +18,10 @@ class DogsController < ApplicationController
   def create
     @mydog = Dog.new(dog_params)
     @mydog.user = current_user
-    if @mydog.save
+    if @mydog.save!
       redirect_to mydogs_path, notice: 'dog was successfully created'
     else
-      redirect_to mydogs_path, notice: 'dog was not created please try again'
+      redirect_to new_dog_path, notice: 'Your dogs details were not correct, try again'
     end
   end
 
