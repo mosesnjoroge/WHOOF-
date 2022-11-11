@@ -7,41 +7,37 @@
   </div>
 </div>
 <div class = 'container pt-2'>
-    <div class="d-flex justify-content-center p-3">
-      <h2 clas>The most popular dogs this week</h2>
-    </div>
-  <div class="card border-0">
-      <div class="row">
-        <% @dogs[0,3].each do |dog|  %>
-          <div class="col-sm-1 col-md-6 col-lg-4 ">
-            <div class="card">
+  <div class="d-flex justify-content-center p-3">
+    <h2 clas>The most popular dogs this week</h2>
+  </div>
+</div >
+<div class = "container">
+  <div class="row no-gutters">
+    <% @dogs.each do |dog|  %>
+      <div class="col-md-4">
+        <%= link_to dog_path(dog) do %>
+          <div class="card-category">
             <% if dog.photo.present? %>
-              <%= cl_image_tag dog.photo.key, height: 150, width: 100, crop: :fit %>
-              <div class="card-body">
-                <p class="card-text">Breed: <%= dog.breed %></p>
-                <p class="card-text">Location: <%= dog.user.address %></p>
-                <p class="card-text">Price: $<%= dog.price %></p>
-                <%if user_signed_in? %>
-                  <div class="d-flex justify-content-center">
-                <%= link_to 'BOOK NOW',new_dog_booking_path(dog), class: 'btn btn-outline-success' %>
-             </div>
-            <% end %>
+              <div class = "mx-0.5">
+                <%= cl_image_tag dog.photo.key, height: 150, width: 100, crop: :fill %>
+              </div>
+              <div class = "text-right">
+                <div class="card-body">
+                  <p class="card-text text-right">price:$<%= dog.price %></p>
+                  <p class="card-text text-right">breed:<%= dog.breed %></p>
+                </div>
               </div>
             <%else%>
-               <div class="card-body">
-                <p class="card-text">Breed: <%= dog.breed %></p>
-                <p class="card-text">Location: <%= dog.user.address %></p>
-                <p class="card-text">Price: $<%= dog.price %></p>
-                <%if user_signed_in? %>
-                  <div class="d-flex justify-content-center">
-                <%= link_to 'BOOK NOW',new_dog_booking_path(dog), class: 'btn btn-outline-success' %>
-             </div>
-            <% end %>
+              <div class = "col-md-8">
+                <div class="card-body">
+                  <p class="card-text text-right">price:$<%= dog.price %></p>
+                  <p class="card-text text-right">breed:<%= dog.breed %></p>
+                </div>
               </div>
             <%end%>
-        </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
-      </div>
   </div>
 </div>
