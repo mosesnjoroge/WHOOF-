@@ -1,22 +1,17 @@
-<h1>Your New Booking</h1>
-<div class="container">
-  <div class = "cards">
-    <% fido = @booking.dog %>
-      <%# booking = Booking.find_by(dog: @dog, user: user) %>
-      <div class="card">
-        <div class="card-img">
-          <%#= cl_path_url, class: "card-product img" %>
-        </div>
-        <div class = "card-body">
-          <strong class="card-title"><%#= booking.title %></strong>
-          <p class="card-text"><%#= dog.skill %></p>
-          <strong>skills</strong>
-          <div class="card-text">
-            <small class="text-muted"><%#= bookmark.comment %></small>
-          </div>
-          <%#= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{dog.name} from your booking ?"}, class: 'text-danger' %>
-        </div>
+<div class="container p-4">
+  <h1 class = "text-center">Your Current Booking</h1>
+
+  <div class="card-trip p-4">
+    <%= @dog.photo.key%>
+    <div class="card-trip-infos">
+      <div>
+        <h2> Your booking: <%= @booking.startdate%> - <%= @booking.enddate %></h2>
+        <p><%= @dog.name%></p>
+        <p><%= @dog.breed%></p>
+        <p><%= @dog.description%></p>
       </div>
-    <% end %>
+      <h2 class="card-trip-pricing">$<%= @dog.price%></h2>
+    </div>
+    <%= link_to "See all bookings", mybookings_path, class: 'btn btn-outline-success' %>
   </div>
 </div>

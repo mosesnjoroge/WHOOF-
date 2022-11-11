@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require "faker"
+require "open-uri"
 
 
 20.times do
@@ -21,7 +22,6 @@ require "faker"
   woofer.skills = ["juggling", "skateboarding", "bomb sniffing"]
   woofer.price = rand(20..100)
   woofer.description = "a beatiful little puppy"
-  woofer.image_url = "https://loremflickr.com/320/240/dog"
   woofer.user_id = newUser.id
   woofer.save!
 end
