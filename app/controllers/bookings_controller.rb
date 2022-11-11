@@ -9,10 +9,12 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show;end
+  def show
+  end
 
   def new
     @booking = Booking.new
+    @booking.dog_id = @dog
   end
 
   def create
