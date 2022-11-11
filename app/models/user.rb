@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :dogs
   has_many :bookings, through: :dogs
   has_many :rentals, class_name: 'Booking'
+
+  geocoded_by :address
+  after_validation :geocode, if:
+  :will_save_change_to_address?
 end
