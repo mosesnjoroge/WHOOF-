@@ -12,19 +12,31 @@
     </div>
   <div class="card border-0">
       <div class="row">
-        <% @dogs.each do |dog|  %>
-          <div class="col-2 col-lg-4">
+        <% @dogs[0,3].each do |dog|  %>
+          <div class="col-sm-1 col-md-6 col-lg-4 ">
             <div class="card">
             <% if dog.photo.present? %>
               <%= cl_image_tag dog.photo.key, height: 150, width: 100, crop: :fit %>
               <div class="card-body">
-                <p class="card-text">price:<%= dog.price %></p>
-                <p class="card-text">breed:<%= dog.breed %></p>
+                <p class="card-text">Breed: <%= dog.breed %></p>
+                <p class="card-text">Location: <%= dog.user.address %></p>
+                <p class="card-text">Price: $<%= dog.price %></p>
+                <%if user_signed_in? %>
+                  <div class="d-flex justify-content-center">
+                <%= link_to 'BOOK NOW',new_dog_booking_path(dog), class: 'btn btn-outline-success' %>
+             </div>
+            <% end %>
               </div>
             <%else%>
                <div class="card-body">
-                <p class="card-text">price:<%= dog.price %></p>
-                <p class="card-text">breed:<%= dog.breed %></p>
+                <p class="card-text">Breed: <%= dog.breed %></p>
+                <p class="card-text">Location: <%= dog.user.address %></p>
+                <p class="card-text">Price: $<%= dog.price %></p>
+                <%if user_signed_in? %>
+                  <div class="d-flex justify-content-center">
+                <%= link_to 'BOOK NOW',new_dog_booking_path(dog), class: 'btn btn-outline-success' %>
+             </div>
+            <% end %>
               </div>
             <%end%>
         </div>
