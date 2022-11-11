@@ -19,7 +19,7 @@ class DogsController < ApplicationController
     @mydog = Dog.new(dog_params)
     @mydog.user = current_user
     if @mydog.save
-      redirect_to mydog_path, notice: 'dog was successfully created'
+      redirect_to mydogs_path, notice: 'dog was successfully created'
     else
       redirect_to mydogs_path, notice: 'dog was not created please try again'
     end
