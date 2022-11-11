@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @rentals = Booking.find_by(params[:booking])
   end
 
   def create
@@ -21,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.dog = @dog
     @booking.user = current_user
     if @booking.save
-      redirect_to mybooking_path, notice: 'booking was successfully created'
+      redirect_to mybookings_path, notice: 'booking was successfully created'
     else
       redirect_to dog_bookings_path
     end
