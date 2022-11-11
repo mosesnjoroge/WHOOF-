@@ -2,24 +2,31 @@
 <div class = "p-4 d-flex justify-content-end">
     <%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
 </div>
-<div class = 'container py-3'>
+<div class = "content">
   <div class="cards">
-    <% @dogs.each do |dog|  %>
-      <div class="row row-cols-3 row-cols-md-2 g-4">
-        <div class="col">
-          <% if dog.photo.present? %>
-            <div class="card-body">
-              <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
+    <% @mydogs.each do |dog|  %>
+        <div class = "row">
+          <div class="card-category">
+            <% if dog.photo.present? %>
+              <div class = "mx-3">
+                <%= cl_image_tag dog.photo.key, height: 140, width: 100, crop: :fit %>
+              </div>
+              <div class="card-body">
+                <p class="card-text">breed:<%=dog.breed%></p>
+                <p class="card-text">price:$<%=dog.price%></p>
+              </div>
+            <%else%>
+              <div class = "mx-3">
+                <h5 class="card-title">Please upload photo</h5>
+              </div>
               <p class="card-text">breed:<%=dog.breed%></p>
-              <p class="card-text">price:<%=dog.price%></p>
+              <p class="card-text">price:$<%=dog.price%></p>
+            <%end%>
+            <div class = "mx-1">
+              <%= link_to 'Update dog',edit_dog_path(dog), class: 'btn btn-outline-success' %>
+              <%= link_to 'Remove dog',edit_dog_path(dog), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{dog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
             </div>
-          <%else%>
-            <div class="card-body">
-              <h5 class="card-title">my dogs cards</h5>
-              <p class="card-text">breed:<%=dog.breed%></p>
-              <p class="card-text">price:<%=dog.price%></p>
-            </div>
-          <%end%>
+          </div>
         </div>
       </div>
     <% end %>

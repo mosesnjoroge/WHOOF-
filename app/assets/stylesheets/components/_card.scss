@@ -1,9 +1,9 @@
 .cards {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
-  padding: 16px;
+  padding: 5px;
 }
 
 .card-category {
@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   color: rgb(26, 25, 25);
-  font-size: 24px;
+  font-size: 10px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -25,12 +25,6 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
 }
 
 .card-trip h2 {
