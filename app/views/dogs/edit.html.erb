@@ -4,14 +4,18 @@
       <div class="bg-white rounded p-3 shadow">
         <h1> What would you like change about: <%= @dog.name %> </h1>
         <%= simple_form_for(@dog) do |f| %>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-          <%= f.label :breed %>
-          <%= f.text_field :breed %>
-          <%= f.input :photo, as: :file, direct_upload: true %>
-          <%= f.label :skills %>
-          <%= f.text_field :skills %>
-          <div class = "p-1">
+          <div class = "container">
+            <div class = "row">
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+              <%= f.label :breed %>
+              <%= f.text_field :breed %>
+              <%= f.input :photo, as: :file, direct_upload: true %>
+              <%= f.label :skills %>
+              <%= f.text_field :skills %>
+            </div>
+          </div>
+          <div class = "p-2">
             <%= f.submit class: 'btn btn-outline-success' %>
             <%= link_to 'Back',mydogs_url, class: 'btn btn-outline-danger' %>
           </div>
