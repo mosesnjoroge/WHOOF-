@@ -9,7 +9,7 @@
 .dog-pics {
   border-style: solid;
   border-width: medium;
-  border-color: #adf9ad;
+  border-color: #228B22;
 }
 
 
@@ -59,4 +59,13 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-column{
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  padding: 0 10px;
 }

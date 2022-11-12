@@ -6,6 +6,11 @@ class BookingsController < ApplicationController
   def index
     # moses was here
     @bookings = current_user.bookings
+    @mydogs = current_user.dogs
+    @rentals = []
+    @mydogs.each do |dog|
+      @rentals.append(dog.bookings)
+    end
     @bookings = Booking.all
   end
 
