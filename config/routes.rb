@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/my-dogs', to: 'dogs#mydogs', as: 'mydogs'
   # list a dog(owner)
   get '/my-dogs/:id', to: 'dogs#show', as: 'mydog'
+  # remove your dog from website
+  delete '/my-dogs/:id', to: "dogs#destroy", as: 'removedog'
   # update dog posting
   patch '/my-dogs/:id', to: 'dogs#update'
   # checkout route
