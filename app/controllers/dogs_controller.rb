@@ -9,6 +9,14 @@ class DogsController < ApplicationController
   # moses was here
   def show
     @dog = set_dog
+    @markers = [
+      {
+        lat: @dog.user.latitude,
+        lng: @dog.user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {dog: @dog.user.address}),
+        image_url: helpers.asset_url("dog.jpg")
+      }
+    ]
   end
 
   def new
