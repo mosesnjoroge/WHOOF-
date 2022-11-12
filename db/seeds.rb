@@ -9,11 +9,6 @@
 require "faker"
 require "open-uri"
 
-Booking.delete_all
-Dog.delete_all
-User.delete_all
-
-
 15.times do
   newUser = User.new()
   newUser.email = Faker::Internet.email
