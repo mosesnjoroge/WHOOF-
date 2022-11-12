@@ -23,7 +23,6 @@ newUser.save!
 woofer = Dog.new()
 woofer.name = Faker::Name.name
 woofer.breed = "Bouvier"
-woofer.photo = `../app/assets/images/Bouvier.jpg`
 woofer.skills = ["juggling", "skateboarding", "bomb sniffing"]
 woofer.price = rand(20..100)
 woofer.description = "a beatiful little puppy"
