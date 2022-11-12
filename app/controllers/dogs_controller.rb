@@ -50,7 +50,7 @@ class DogsController < ApplicationController
   def destroy
     set_dog
     rufus = @dog.name
-    @dog.destroy!
+    @dog.destroy
     redirect_to mydogs_path, status: :see_other, notice: "You removed #{rufus} from Whoof"
   end
 
