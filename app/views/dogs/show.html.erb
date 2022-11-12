@@ -19,7 +19,8 @@
             <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
           </div>
           <%end%>
-          <%= link_to 'Back',mydogs_path, class: 'btn btn-outline-danger' %>
+          <%= link_to 'Add a booking',new_dog_booking_path(@dog), class: 'btn btn-outline-success' %>
+          <%= link_to 'Back',dogs_path, class: 'btn btn-outline-danger' %>
         </div>
       </div>
   </div>
