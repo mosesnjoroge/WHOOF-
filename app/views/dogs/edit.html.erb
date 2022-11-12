@@ -7,7 +7,7 @@
           <%= f.input :name %>
           <%= f.input :breed %>
           <%= f.input :photo, as: :file, direct_upload: true %>
-          <%= f.input :skills %>
+          <%= f.input :skills, placeholder: 'driving your car' %>
           <%= f.submit class: 'btn btn-outline-success' %>
           <%= link_to 'Back',mydogs_url, class: 'btn btn-outline-danger' %>
         <% end %>

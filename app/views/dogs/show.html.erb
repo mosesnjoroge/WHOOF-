@@ -5,7 +5,7 @@
           <strong><%= @dog.name %> </strong>
           <% if @dog.photo.present? %>
           <div class="card-text">
-            <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag @dog.photo.key, height: 200, width: 100, crop: :fit %>
             <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
             <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
             <p class="card-text"> <strong> Price:$ </strong><%=@dog.price%></p>
@@ -20,6 +20,7 @@
           </div>
           <%end%>
           <%= link_to 'Add a booking',new_dog_booking_path(@dog), class: 'btn btn-outline-success' %>
+
           <%= link_to 'Back',dogs_path, class: 'btn btn-outline-danger' %>
         </div>
       </div>
