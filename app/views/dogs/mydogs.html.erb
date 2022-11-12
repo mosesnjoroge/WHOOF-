@@ -5,27 +5,27 @@
 <div class = "container">
   <div class="cards">
     <% @mydogs.each do |dog|  %>
-        <div class = "row">
-          <div class="card-category">
-            <% if dog.photo.present? %>
-              <%= cl_image_tag dog.photo.key, height: 180, width: 200, crop: :fit %>
-              <div class="card-body">
-                <p class="card-text">Breed:<%=dog.breed%></p>
-                <p class="card-text">Price:$<%=dog.price%></p>
-              </div>
-            <%else%>
-              <div class = "mx-3">
-                <h5 class="card-title">Please upload photo</h5>
-              </div>
+      <div class = "row">
+        <div class="card-category">
+          <% if dog.photo.present? %>
+            <%= cl_image_tag dog.photo.key, height: 180, width: 200, crop: :fit %>
+            <div class="card-body">
               <p class="card-text">Breed:<%=dog.breed%></p>
               <p class="card-text">Price:$<%=dog.price%></p>
-            <%end%>
-            <div class = "mx-1">
-              <%= link_to 'Update dog',edit_dog_path(dog), class: 'btn btn-outline-success' %>
-              <%= link_to 'Remove dog',edit_dog_path(dog), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{dog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
             </div>
+          <%else%>
+            <div class = "mx-3">
+              <h5 class="card-title">Please upload photo</h5>
+            </div>
+            <p class="card-text">Breed:<%=dog.breed%></p>
+            <p class="card-text">Price:$<%=dog.price%></p>
+          <%end%>
+          <div class = "mx-1">
+            <%= link_to 'Update dog',edit_dog_path(dog), class: 'btn btn-outline-success' %>
+            <%= link_to 'Remove dog',edit_dog_path(dog), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{dog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
           </div>
         </div>
+      </div>
     <% end %>
   </div>
 </div>
