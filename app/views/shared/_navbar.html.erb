@@ -4,9 +4,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home",root_path, class: "nav-link" %>
-          </li>
+          <div class = 'back-btn'>
+            <li class="nav-item active">
+              <%= link_to "Home",root_path, class: "nav-link" %>
+            </li>
+            <%= link_to :back do %>
+              <i class="fa-solid fa-chevron-left"></i>
+            <% end %>
+          </div>
           <li class="nav-item dropdown">
             <%= image_tag "https://img.icons8.com/ios/50/null/user-male-circle.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -18,10 +23,10 @@
                 class: "dropdown-item" %>
             </div>
           </li>
-          <form class = 'd-flex'>
+          <%# <form class = 'd-flex'>
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> %>
         <% else %>
           <li class="nav-item active">
             <%= link_to "Login",new_user_session_path, class: "nav-link" %>
