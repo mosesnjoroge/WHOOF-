@@ -21,18 +21,20 @@
               </div>
             </div>
           <%else%>
-            <div>
-              <div class = "mydog-upload-title">
+            <div class = 'card-body'>
+              <div class = "mydog-upload-title text-center">
                 <h5><strong>Please upload photo</strong> </h5>
               </div>
               <div class = 'mydog-text'>
                 <p>
-                  <%=mydog.name %>
-                  Breed:<%=mydog.breed%>
+                  Name:<%=mydog.name %>
+                  <div>
+                    Breed:<%=mydog.breed%>
+                  </div>
                 </p>
-                <p>
+                <div>
                   Price:$<%=mydog.price%>
-                </p>
+                </div>
               </div>
             </div>
           <%end%>
