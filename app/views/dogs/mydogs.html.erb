@@ -1,28 +1,41 @@
-<%= render 'shared/banner'%>
-<div class = "p-4 d-flex justify-content-end">
-    <%= link_to 'Add a new dog',new_dog_path, class: 'btn btn-outline-success' %>
+<div>
+  <%= render 'shared/banner'%>
 </div>
-<div class = "container">
-  <div class="cards">
-    <% @mydogs.each do |dog|  %>
-      <div class = "row">
+<%# <div class = "pt-4 d-flex justify-content-center">
+  <%= link_to 'ADD',new_dog_path, class: 'btn btn-outline-success' %>
+<%# </div> %>
+<div class = "container pb-4 pt-4">
+  <div class = "row no-gutters">
+    <% @mydogs.each do |mydog|  %>
+      <div class="pb-3">
         <div class="card-category">
-          <% if dog.photo.present? %>
-            <%= cl_image_tag dog.photo.key, height: 180, width: 200, crop: :fit %>
+          <% if mydog.photo.present? %>
+            <%= cl_image_tag mydog.photo.key, height: 180, width: 200, crop: :fit %>
             <div class="card-body">
-              <p class="card-text">Breed:<%=dog.breed%></p>
-              <p class="card-text">Price:$<%=dog.price%></p>
+              <div class="card-title">
+                <h5><%= mydog.name %></h5>
+              </div>
+              <div class="card-text">
+                <p>Breed:<%=mydog.breed%></p>
+                <p>Price:$<%=mydog.price%></p>
+              </div>
             </div>
           <%else%>
-            <div class = "mx-3">
-              <h5 class="card-title">Please upload photo</h5>
+            <div class = "card-title">
+              <h5>Please upload photo</h5>
             </div>
-            <p class="card-text">Breed:<%=dog.breed%></p>
-            <p class="card-text">Price:$<%=dog.price%></p>
+            <div class = 'card-text'>
+              <p>Breed:<%=mydog.breed%></p>
+              <p>Price:$<%=mydog.price%></p>
+            </div>
           <%end%>
-          <div class = "mx-1">
-            <%= link_to 'Update dog',edit_dog_path(dog), class: 'btn btn-outline-success' %>
-            <%= link_to 'Remove dog',removedog_path(dog.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{dog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
+          <div class = "card-link d-flex">
+            <div class="w-100">
+              <%= link_to 'Update dog',edit_dog_path(mydog), class: 'btn btn-outline-success' %>
+            </div>
+            <div class="w-100">
+              <%= link_to 'Remove dog',removedog_path(mydog.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{mydog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
+            </div>
           </div>
         </div>
       </div>
