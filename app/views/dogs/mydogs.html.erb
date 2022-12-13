@@ -10,14 +10,21 @@
       <div class="pb-3">
         <div class="card-category">
           <% if mydog.photo.present? %>
-            <%= cl_image_tag mydog.photo.key, height: 180, width: 200, crop: :fit %>
             <div class="card-body">
-              <div class="card-title">
-                <h5><%= mydog.name %></h5>
+              <%#= cl_image_tag mydog.photo.key, height: 180, width: 200, crop: :fit %>
+              <div class="mydog-card-photo">
+                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
               </div>
-              <div class="card-text">
-                <p>Breed:<%=mydog.breed%></p>
-                <p>Price:$<%=mydog.price%></p>
+              <div class = 'mydog-photo-text'>
+                <p>
+                  Name:<%=mydog.name %>
+                  <div>
+                    Breed:<%=mydog.breed%>
+                  </div>
+                </p>
+                <div>
+                  Price:$<%=mydog.price%>
+                </div>
               </div>
             </div>
           <%else%>
