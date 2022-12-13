@@ -1,29 +1,37 @@
-<div class = 'container py-3'>
-  <div class="card border-0">
-    <div class="row">
+<div class = 'container pt-3 pb-3'>
+  <div class = 'card'>
+    <div class="row no-gutters">
       <% @dogs.each do |doggo|  %>
-        <div class="col-42 col-lg-4 my-3">
+        <div class="col-42 col-lg-4">
           <div class="card-category">
             <% if doggo.photo.present? %>
               <%= cl_image_tag doggo.photo.key, height: 180, width: 200, crop: :fit %>
               <div class="card-body">
-                <h5 class="card-title"><%= doggo.name %></h5>
-                <p class="card-text">Breed: <%= doggo.breed %></p>
-                <p class="card-text">Location: <%= doggo.user.address %></p>
-                <p class="card-text">Price: $<%= doggo.price %></p>
-                    <div class="col-xs-1" align="center">
-                      <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
-                    </div>
+                <div class="card-title">
+                  <h5><%= doggo.name %></h5>
+                </div>
+                <div class="card-text">
+                  <p >Breed: <%= doggo.breed %></p>
+                  <p>Location: <%= doggo.user.address %></p>
+                  <p>Price: $<%= doggo.price %></p>
+                </div>
+                <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
               </div>
             <%else%>
               <div class="card-body">
-                <h5 class="card-title"><%= doggo.name %></h5>
-                <p class="card-text">Breed: <%= doggo.breed %></p>
-                <p class="card-text">location: <%= doggo.user.address %></p>
-                <p class="card-text">price: $<%= doggo.price %></p>
-                    <div class="col-xs-1" align="center">
-                      <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
-                    </div>
+                <div class="card-title">
+                  <h5><%= doggo.name %></h5>
+
+                <div class="card-text">
+                  <p>Breed: <%= doggo.breed %></p>
+                  <p>location: <%= doggo.user.address %></p>
+                  <p>price: $<%= doggo.price %></p>
+                </div>
+                <div>
+                  <%= link_to 'Check me out',dog_path(doggo), class: 'btn btn-outline-success' %>
+                </div>
+                <div>
+                </div>
               </div>
             <%end%>
           </div>
@@ -32,3 +40,18 @@
     </div>
   </div>
 </div>
+
+  <%# <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div> %>
