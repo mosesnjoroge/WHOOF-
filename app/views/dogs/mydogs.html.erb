@@ -10,32 +10,44 @@
       <div class="pb-3">
         <div class="card-category">
           <% if mydog.photo.present? %>
-            <%= cl_image_tag mydog.photo.key, height: 180, width: 200, crop: :fit %>
             <div class="card-body">
-              <div class="card-title">
-                <h5><%= mydog.name %></h5>
+              <%#= cl_image_tag mydog.photo.key, height: 180, width: 200, crop: :fit %>
+              <div class="mydog-card-photo">
+                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
               </div>
-              <div class="card-text">
-                <p>Breed:<%=mydog.breed%></p>
-                <p>Price:$<%=mydog.price%></p>
+              <div class = 'mydog-photo-text'>
+                <p>
+                  Name:<%=mydog.name %>
+                  <div>
+                    Breed:<%=mydog.breed%>
+                  </div>
+                </p>
+                <div>
+                  Price:$<%=mydog.price%>
+                </div>
               </div>
             </div>
           <%else%>
-            <div class = "card-title">
-              <h5>Please upload photo</h5>
-            </div>
-            <div class = 'card-text'>
-              <p>Breed:<%=mydog.breed%></p>
-              <p>Price:$<%=mydog.price%></p>
+            <div class = 'card-body'>
+              <div class = "mydog-upload-title text-center">
+                <h5><strong>Please upload photo</strong> </h5>
+              </div>
+              <div class = 'mydog-text'>
+                <p>
+                  Name:<%=mydog.name %>
+                  <div>
+                    Breed:<%=mydog.breed%>
+                  </div>
+                </p>
+                <div>
+                  Price:$<%=mydog.price%>
+                </div>
+              </div>
             </div>
           <%end%>
-          <div class = "card-link d-flex">
-            <div class="w-100">
-              <%= link_to 'Update dog',edit_dog_path(mydog), class: 'btn btn-outline-success' %>
-            </div>
-            <div class="w-100">
-              <%= link_to 'Remove dog',removedog_path(mydog.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{mydog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
-            </div>
+          <div class="mydog-card-link">
+            <%= link_to 'Update dog',edit_dog_path(mydog), class: 'btn btn-outline-success' %>
+            <%= link_to 'Remove dog',removedog_path(mydog.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{mydog.name} from your Rentals?"}, class: 'btn btn-outline-danger' %>
           </div>
         </div>
       </div>
