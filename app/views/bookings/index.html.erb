@@ -5,22 +5,25 @@
     <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
   </div>
   <p><strong>These are the dogs you will be renting!:</strong></p>
-  <div class = "container">
-    <div class = "cards">
+  <div class = "container pb-4 pt-4 ">
+    <div class = "row no-gutters">
       <% @bookings.each do |booking| %>
-        <div class="card-category">
-          <div class="card-column">
-            <% @dog = Dog.find(booking.dog_id) %>
-            <%= @dog.name %>
-            <h1> &#128021 </h1>
-          </div>
-          <div class="card-column">
-            <h1> <%= booking.startdate %> </h1>
-            <p> &#10145 </p>
-            <h1> <%= booking.enddate %> </h1>
-          </div>
-          <div class="card-column">
-            <%= link_to "See more", mybooking_path(booking), class: 'btn btn-outline-success' %>
+        <div class="pb-3">
+          <div class="card-category">
+            <div class="card-text">
+              <p><%= booking.startdate %> </p>
+              ->
+              <p> <%= booking.enddate %> </p>
+            </div>
+            <div class="card-text">
+              <p>
+                <% @dog = Dog.find(booking.dog_id) %>
+                <%= @dog.name %>
+              </p>
+            </div>
+            <div class="card-link">
+              <%= link_to "See more", mybooking_path(booking), class: 'btn btn-outline-success flex-end' %>
+            </div>
           </div>
         </div>
       <% end %>
