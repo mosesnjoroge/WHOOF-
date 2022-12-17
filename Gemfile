@@ -41,7 +41,7 @@ gem "jbuilder"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "cloudinary"
 gem "cloudinary"
-
+gem 'simple_form_extension'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
@@ -82,3 +82,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "redactor-rails", github: "glyph-fr/redactor-rails"

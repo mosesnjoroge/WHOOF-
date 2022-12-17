@@ -2,8 +2,8 @@
 
     <div class="col-12 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h2>Post your Dog</h2>
-        <%= simple_form_for @dog do |f| %>
+        <h2 class = 'text-center'>Post your Dog</h2>
+        <%= simple_form_for dog do |f| %>
           <%= f.input :name, placeholder: 'Morty' %>
           <%= f.input :breed, placeholder: 'Corgi' %>
           <%= f.input :skills, placeholder: 'driving your car' %>
