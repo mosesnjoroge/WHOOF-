@@ -1,32 +1,25 @@
-<%= render 'shared/banner'%>
+<%#= render 'shared/banner'%>
 <meta charset="UTF-8">
 <div class="container">
   <div class = "text-center">
-    <h2><strong>These are the dogs you will be renting:</strong></h2>
-    <%= link_to "Add Booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
+    <%# <h2><strong>These are the dogs you will be renting:</strong></h2> %>
+    <%#= link_to "Add Booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
   </div>
   <div class = "container pb-4 pt-4 ">
-    <div class = "row no-gutters">
-      <% @bookings.each do |booking| %>
-        <div class="pb-3">
-          <div class="card-category">
-            <div class="card-text" style="position: relative;right: 84px;">
-              <p><%= booking.startdate %> </p>
-              ->
-              <p> <%= booking.enddate %> </p>
-            </div>
-            <div class="card-text">
-              <p>
-                <% @dog = Dog.find(booking.dog_id) %>
-                <%= @dog.name %>
-              </p>
-            </div>
-            <div class="card-link" style="position: relative;left: 86px;">
-              <%= link_to "See more", mybooking_path(booking), class: 'btn btn-outline-success flex-end' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <% @bookings.each do |booking| %>
+      <span>
+        <p><%= booking.startdate %> -> <%= booking.enddate %></p>
+      </span>
+      <div>
+        <p>
+          <% @dog = Dog.find(booking.dog_id) %>
+          <%= @dog.name %>
+        </p>
+      </div>
+      <div class="card-link" style="position: relative;left: 86px;">
+        <%= link_to "See more", mybooking_path(booking), class: 'btn btn-flat' %>
+      </div>
+      <hr class="dropdown-divider">
+    <% end %>
   </div>
 </div>
