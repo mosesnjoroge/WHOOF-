@@ -2,15 +2,15 @@
 <meta charset="UTF-8">
 <div class="container">
   <div class = "text-center">
-    <%= link_to "Click here to add another booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
+    <h2><strong>These are the dogs you will be renting:</strong></h2>
+    <%= link_to "Add Booking", dogs_path, class: 'btn btn-outline-success btn-sm' %>
   </div>
-  <p><strong>These are the dogs you will be renting!:</strong></p>
   <div class = "container pb-4 pt-4 ">
     <div class = "row no-gutters">
       <% @bookings.each do |booking| %>
         <div class="pb-3">
           <div class="card-category">
-            <div class="card-text">
+            <div class="card-text" style="position: relative;right: 84px;">
               <p><%= booking.startdate %> </p>
               ->
               <p> <%= booking.enddate %> </p>
@@ -21,7 +21,7 @@
                 <%= @dog.name %>
               </p>
             </div>
-            <div class="card-link">
+            <div class="card-link" style="position: relative;left: 86px;">
               <%= link_to "See more", mybooking_path(booking), class: 'btn btn-outline-success flex-end' %>
             </div>
           </div>
