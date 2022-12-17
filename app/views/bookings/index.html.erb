@@ -8,15 +8,20 @@
   <div class = "container pb-4 pt-4 ">
     <% @bookings.each do |booking| %>
       <span>
-        <p><%= booking.startdate %> -> <%= booking.enddate %></p>
+        <div class = 'd-flex justify-content-between'>
+          <div>
+            <p><%= booking.startdate %> -> <%= booking.enddate %>
+            </p>
+          </div>
+          <div>
+            <p>
+              <% @dog = Dog.find(booking.dog_id) %>
+              <%= @dog.name %>
+            </p>
+          </div>
+        </div>
       </span>
-      <div>
-        <p>
-          <% @dog = Dog.find(booking.dog_id) %>
-          <%= @dog.name %>
-        </p>
-      </div>
-      <div class="card-link" style="position: relative;left: 86px;">
+      <div class="card-link" style="display: flex;flex-direction: column;">
         <%= link_to "See more", mybooking_path(booking), class: 'btn btn-flat' %>
       </div>
       <hr class="dropdown-divider">
