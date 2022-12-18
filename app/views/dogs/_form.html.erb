@@ -8,8 +8,14 @@
       <%= f.input :description, placeholder: 'Corgi that really cool' %>
       <%= f.input :photo, as: :file, direct_upload: true %>
       <%= f.input :price, placeholder: '100 pesos',:collection => 20..150 %>
-      <%= f.submit class: 'btn btn-outline-success' %>
-      <%= link_to "Cancel", mydogs_url, class: 'btn btn-outline-danger' %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <%= f.submit class: 'btn btn-outline-success' %>
+        </div>
+        <div>
+          <%= link_to "Cancel", mydogs_url, class: 'btn btn-outline-danger' %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
