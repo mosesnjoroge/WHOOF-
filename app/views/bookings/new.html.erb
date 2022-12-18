@@ -6,8 +6,8 @@
         <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :startdate, placeholder: '1/1/2021' %>
           <%= f.input :enddate, placeholder: '1/1/2021' %>
-          <%= f.submit "Reserve", class: "btn btn-outline-success" %>
-          <%= link_to "Back", dog_path(@dog), class: "btn btn-outline-danger"%>
+          <%= f.submit "Reserve", class: "btn btn-outline-success d-flex w-100" %>
+          <%= link_to "Back", dog_path(@dog), class: "btn btn-outline-danger mt-2"%>
         <% end %>
       </div>
     </div>
