@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   patch '/my-dogs/:id', to: 'dogs#update'
   # checkout route
   get '/checkout', to: 'pages#checkout'
+  # shopping cart
+  get '/shoppingcart', to: 'bookings#shoppingcart', as: 'cart'
 end

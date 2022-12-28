@@ -9,7 +9,7 @@
           <% end %>
         </div>
         <div class="chekout">
-          <%= link_to checkout_path do %>
+          <%= link_to cart_path do %>
             <i class="fa-solid fa-cart-shopping" style = "color:black;position: relative;right: 22px;"></i>
           <% end %>
         </div>
@@ -17,6 +17,7 @@
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Rent a dog", dogs_path, class: "dropdown-item" %>
           <%= link_to "My Bookings", mybookings_path, class: "dropdown-item"%>
+          <%= link_to "Shopping cart", checkout_path, class: "dropdown-item"%>
           <hr class="dropdown-divider">
           <%= link_to "My Dogs", mydogs_path, class: "dropdown-item"%>
           <%= link_to "Rent Out Your Dog",new_dog_url, class: "dropdown-item" %>
