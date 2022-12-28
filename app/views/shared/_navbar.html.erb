@@ -2,39 +2,37 @@
   <div class="container-fluid">
     <%= link_to 'WHOOF', root_path, class: 'navbar-brand'%>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <div class = 'back-btn'>
-            <%= link_to :back do %>
-              <i class="fa-solid fa-chevron-left" style = "color:black;"></i>
-            <% end %>
-            <%= link_to checkout_path do %>
-              <i class="fa-solid fa-cart-shopping"></i>
-            <% end %>
-          </div>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://img.icons8.com/ios/50/null/user-male-circle.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Rent a dog", dogs_path, class: "dropdown-item" %>
-              <%= link_to "My Bookings", mybookings_path, class: "dropdown-item"%>
-              <hr class="dropdown-divider">
-              <%= link_to "My Dogs", mydogs_path, class: "dropdown-item"%>
-              <%= link_to "Rent Out Your Dog",new_dog_url, class: "dropdown-item" %>
-              <hr class="dropdown-divider">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
-                class: "dropdown-item" %>
-            </div>
-          </li>
-          <%# <form class = 'd-flex'>
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> %>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to "Login",new_user_session_path, class: "nav-link" %>
-          </li>
-        <%end %>
-      </ul>
+      <% if user_signed_in? %>
+        <div class = 'back-btn'>
+          <%= link_to :back do %>
+            <i class="fa-solid fa-chevron-left" style = "color:black;position: relative;right: 53px;"></i>
+          <% end %>
+        </div>
+        <div class="chekout">
+          <%= link_to checkout_path do %>
+            <i class="fa-solid fa-cart-shopping" style = "color:black;position: relative;right: 22px;"></i>
+          <% end %>
+        </div>
+        <%= image_tag "https://img.icons8.com/ios/50/null/user-male-circle.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "Rent a dog", dogs_path, class: "dropdown-item" %>
+          <%= link_to "My Bookings", mybookings_path, class: "dropdown-item"%>
+          <hr class="dropdown-divider">
+          <%= link_to "My Dogs", mydogs_path, class: "dropdown-item"%>
+          <%= link_to "Rent Out Your Dog",new_dog_url, class: "dropdown-item" %>
+          <hr class="dropdown-divider">
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
+            class: "dropdown-item" %>
+        </div>
+        <%# <form class = 'd-flex'>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> %>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to "Login",new_user_session_path, class: "nav-link" %>
+        </li>
+      <%end %>
     </div>
   </div>
 </div>
