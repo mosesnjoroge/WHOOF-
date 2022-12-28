@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!, except: %i[show index]
-  before_action :set_dog, only: %i[create new]
+  before_action :authenticate_user!
+  before_action :set_dog, only: %i[ shoppingcart create new]
   before_action :set_booking, only: %i[show edit update]
 
   def index
@@ -18,21 +18,28 @@ class BookingsController < ApplicationController
     @dog = Dog.find(@booking.dog_id)
   end
 
+  def shoppingcart
+    show()
+    @dog_reserve = @dog
+  end
+
   def new
     @booking = Booking.new
     @booking.dog_id = @dog
   end
+
 
   def create
     @booking = Booking.new(booking_params)
     @booking.dog = @dog
     @booking.user = current_user
     if @booking.save
-      redirect_to mybookings_path, notice: 'booking was successfully created'
+      redirect_to mybooking_path(@booking), notice: 'booking was successfully created'
     else
       redirect_to dog_bookings_path
     end
   end
+
 
   def edit
   end
