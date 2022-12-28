@@ -17,15 +17,7 @@
     <div id="page-container">
       <div id="content-wrap">
         <%= render 'shared/navbar' %>
-        <% flash.each do |key, message| %>
-          <div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
-            <%= alert %>
-            <%= notice %>
-            <a data-bs-dismiss="alert" aria-label="Close">
-              <i class="fas fa-times"></i>
-            </a>
-          </div>
-        <% end %>
+        <%= render "shared/flashes" %>
         <%= yield %>
         <%= render 'shared/footer' %>
       </div>
