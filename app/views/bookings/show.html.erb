@@ -3,11 +3,7 @@
   <div class="card-trip p-4">
     <%= cl_image_tag @dog.photo.key, height: 180, width: 200, crop: :fit %>
     <div class="card-trip-infos">
-        <h2> Your booking: <%= @booking.startdate%> - <%= @booking.enddate %></h2>
-        <p><%= @dog.name%></p>
-        <p><%= @dog.breed%></p>
-        <p><%= @dog.description%></p>
-      <h2 class="card-trip-pricing">$<%= @dog.price%></h2>
+      <h2> Your booking: <%= @booking.startdate%> - <%= @booking.enddate %></h2>
     </div>
   </div>
   <div>

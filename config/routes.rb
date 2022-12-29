@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :dogs do
-    resources :bookings, only: %i[new create destroy]
+    resources :bookings, only: %i[new create]
   end
   # list of all user bookings
   get '/my-bookings', to: 'bookings#index', as: 'mybookings'
@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get '/checkout', to: 'pages#checkout'
   # shopping cart
   get '/shoppingcart', to: 'bookings#shoppingcart', as: 'cart'
+  #remove your booking
+  resources :bookings, only: [:destroy]
 end

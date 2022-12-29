@@ -44,6 +44,11 @@ class BookingsController < ApplicationController
     redirect_to my_booking_path(@booking)
   end
 
+  def destroy
+    @booking.destroy
+    redirect_to dogs_path, notice: 'booking was successfully deleted'
+  end
+
   private
 
   def set_dog
