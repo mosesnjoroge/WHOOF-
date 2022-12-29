@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_dog, only: %i[ shoppingcart create new]
+  before_action :set_dog, only: %i[ create new]
   before_action :set_booking, only: %i[show edit update]
 
   def index
@@ -16,11 +16,6 @@ class BookingsController < ApplicationController
 
   def show
     @dog = Dog.find(@booking.dog_id)
-  end
-
-  def shoppingcart
-    show()
-    @dog_reserve = @dog
   end
 
   def new
