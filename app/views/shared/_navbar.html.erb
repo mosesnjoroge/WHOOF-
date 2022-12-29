@@ -11,7 +11,9 @@
         <div>
           <%= link_to mycart_path do %>
             <i class="fa-solid fa-cart-shopping" style = "color:black;position: relative;right: 22px;">
-              <span class="badge badge-danger" style="position: relative;right: 5px;top: -3px;color: #221f1f;"><%= @bookings.count %></span>
+              <span class="badge badge-danger" style="position: relative;right: 5px;top: -3px;color: #221f1f;">
+                <%= $cart_counter %>
+              </span>
             </i>
           <% end %>
         </div>

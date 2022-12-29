@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
       @rentals.append(dog.bookings)
     end
     @bookings = Booking.all
+    $cart_counter = @bookings.count
   end
 
   def show
