@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_dog, only: %i[ create new]
-  before_action :set_booking, only: %i[show edit update]
+  before_action :set_booking, only: %i[show edit update destroy ]
 
   def index
     # moses was here
@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to dogs_path, notice: 'booking was successfully deleted'
+    redirect_to dogs_path, status: :see_other
   end
 
   private

@@ -124,8 +124,7 @@
       </div>
       <hr class="mb-4">
       <button class="btn btn-outline-success btn-lg btn-block w-100" type="submit">Continue</button>
-      <%= link_to 'Cancel',booking_path(@booking), method: :delete, class: 'btn btn-outline-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
-      <%#= link_to "delete ", list_path(@list), method: :delete, class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+      <%= link_to 'Cancel',booking_path(@booking), method: :delete, class: 'btn btn-outline-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel #{@dog.name}? from your booking ?" } %>
     </form>
   </div>
 </div>
