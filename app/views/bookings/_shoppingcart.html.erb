@@ -12,7 +12,7 @@
       </li>
       <li class="list-group-item d-flex justify-content-between">
         <span class="text-muted">
-          <h6>Your booking: <%= @booking.startdate%> - <%= @booking.enddate %></h6>
+          <h6>Your booking: <strong><%= @booking.startdate%> - <%= @booking.enddate %></strong></h6>
         </span>
       </li>
       <li class="list-group-item d-flex justify-content-between">
@@ -126,7 +126,7 @@
         </div>
       </div>
       <hr class="mb-4">
-      <button class="btn btn-outline-success btn-lg btn-block w-100" type="submit">Continue</button>
+      <button class="btn btn-outline-success" type="submit">Continue</button>
       <%= link_to 'Cancel',booking_path(@booking), method: :delete, class: 'btn btn-outline-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel #{@dog.name}? from your booking ?" } %>
     </form>
   </div>

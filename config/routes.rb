@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
   # list of all user bookings
-  get '/my-bookings', to: 'bookings#index', as: 'mybookings'
+  get '/my-bookings', to: 'bookings#index', as: 'mycart'
   # list a booking
   get '/my-bookings/:id', to: 'bookings#show', as: 'mybooking'
   # list all dogs(owner)
@@ -17,10 +17,9 @@ Rails.application.routes.draw do
   delete '/my-dogs/:id', to: "dogs#destroy", as: 'removedog'
   # update dog posting
   patch '/my-dogs/:id', to: 'dogs#update'
-  # checkout route
-  get '/checkout', to: 'pages#checkout'
+
   # shopping cart
-  get '/shoppingcart', to: 'bookings#shoppingcart', as: 'cart'
+  # get '/shoppingcart', to: 'bookings#shoppingcart', as: 'cart'
   #remove your booking
   resources :bookings, only: [:destroy]
 end

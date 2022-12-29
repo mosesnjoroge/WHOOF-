@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy ]
 
   def index
-    # moses was here
     @bookings = current_user.bookings
     @mydogs = current_user.dogs
     @rentals = []
