@@ -11,7 +11,7 @@
         <div>
           <%= link_to mycart_path do %>
             <i class="fa-solid fa-cart-shopping" style = "color:black;position: relative;right: 22px;">
-              <span class="badge badge-danger" style="position: relative;right: 12px;top: -10px;color: red;">9</span>
+              <span class="badge badge-danger" style="position: relative;right: 5px;top: -3px;color: #221f1f;"><%= @bookings.count %></span>
             </i>
           <% end %>
         </div>
@@ -26,10 +26,6 @@
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
             class: "dropdown-item" %>
         </div>
-        <%# <form class = 'd-flex'>
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> %>
       <% else %>
         <div class="nav-item active">
           <%= link_to "Login",new_user_session_path, class: "nav-link" %>
