@@ -8,9 +8,11 @@
             <i class="fa-solid fa-chevron-left" style = "color:black;position: relative;right: 53px;"></i>
           <% end %>
         </div>
-        <div class="chekout">
+        <div>
           <%= link_to mycart_path do %>
-            <i class="fa-solid fa-cart-shopping" style = "color:black;position: relative;right: 22px;"></i>
+            <i class="fa-solid fa-cart-shopping" style = "color:black;position: relative;right: 22px;">
+              <span class="badge badge-danger" style="position: relative;right: 12px;top: -10px;color: red;">9</span>
+            </i>
           <% end %>
         </div>
         <%= image_tag "https://img.icons8.com/ios/50/null/user-male-circle.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
