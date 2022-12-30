@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_dog, only: %i[ create new]
-  before_action :set_booking, only: %i[show edit update destroy ]
+  before_action :set_dog, only: %i[create new]
+  before_action :set_booking, only: %i[show edit update destroy]
 
   def index
     @bookings = current_user.bookings
@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
       @rentals.append(dog.bookings)
     end
     @bookings = Booking.all
-    $cart_counter = @bookings.count
+    counter = @bookings.count
+    $cart_counter = counter
   end
 
   def show
