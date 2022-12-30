@@ -1,9 +1,13 @@
 <div class="d-flex justify-content-between">
-  <div>
-    <h1 style="position: relative;top: 170px;">Welcome to WHOOF your one-stop shop for cuddly vibes</h1>
+  <div class= 'container'>
+    <h1 style="position:relative;top: 170px;">Welcome to WHOOF your one-stop shop for cuddly vibes
+      <div>
+        <%= link_to "See All",dogs_url, class: "btn btn-outline-success w-100"%>
+      </div>
+    </h1>
   </div>
-  <div class = "col-md-7 px-4 pt-3 pb-4 mb-2"style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445);position: sticky;width:50%;height: 450px;">
-      <%#= link_to "See All",dogs_url, class: "btn btn-outline-success"%>
+  <div class = 'container'>
+    <%= image_tag("https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445",width:'100%',height: '450px',position:'sticky') %>
   </div>
 </div>
 <div class = 'container'>
