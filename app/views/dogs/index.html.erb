@@ -1,7 +1,7 @@
 <div class = 'container pb-4 pt-4'>
   <div class="row no-gutters">
     <% @dogs.each do |doggo|  %>
-      <div class= 'pb-3'>
+      <div class= 'col-md-6 pb-3'>
         <div class="card-category">
           <% if doggo.photo.present? %>
             <%= cl_image_tag doggo.photo.key, height: 180, width: 200, crop: :fit %>
