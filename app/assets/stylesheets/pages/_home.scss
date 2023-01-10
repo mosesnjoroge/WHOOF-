@@ -1,21 +1,11 @@
 // Specific CSS for your home-page
-#page-container {
-  background: linear-gradient(180deg, rgba(158, 236, 121, 0) 25.52%, #94E86C 73.96%)!important;
-}
-
-.navbar-lewagon {
-  background: inherit!important;
-}
-
-.footer {
-  background: inherit!important;
-}
 
 .card-category {
   background: white!important;
 }
 
 .landing-page-carousel{
+  background: linear-gradient(180deg, rgba(173, 249, 173, 0) 30.95%, #ADF9AD 78.78%);
   height:240px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   display: flex;
