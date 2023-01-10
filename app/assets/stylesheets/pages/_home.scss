@@ -1,4 +1,17 @@
 // Specific CSS for your home-page
+#page-container {
+  background: linear-gradient(180deg, rgba(158, 236, 121, 0) 0%, #94E86C 73.96%)!important;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: inherit!important;
+}
+
+.footer {
+  background: inherit!important;
+  color: rgba(0,0,0,0.3);
+}
 
 .landing-page-carousel{
   height:240px;
