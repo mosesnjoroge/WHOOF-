@@ -19,8 +19,6 @@ gem "puma", "~> 5.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
-gem "dotenv-rails", groups: [:development, :test]
-
 gem "geocoder"
 
 gem "open-uri"
