@@ -11,77 +11,77 @@
   </div>
 </div>
 
-<div class = "container pb-4">
+<div class = "pb-4">
   <h2 class = 'text-center pt-2'>
     The most popular dogs this week
   </h2>
 </div>
-<div class="container landing-page-carousel">
+
+<div class="landing-page-carousel">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="group" style='position: fixed;right: 123px;top: 50px;'>
-          <div class="row no-gutters">
-            <% @dog_group1.each do |dog1|  %>
-              <div class="col-md-4 pb-3">
-                <%= link_to dog_path(dog1) do %>
-                  <div class="card-category">
-                    <% if dog1.photo.present? %>
-                      <div class = "img-fluid rounded-start">
-                        <%= cl_image_tag dog1.photo.key, height: 150, width: 150, crop: :fill %>
-                      </div>
-                      <div class = 'text-muted'>
-                        <p class="card-text text-right"><strong><%= dog1.name %></strong></p>
-                        <p class="card-text text-right">Price: $<%= dog1.price %></p>
-                        <p class="card-text text-right">Breed:<%= dog1.breed %></p>
-                      </div>
-                    <%else%>
-                      <div class="card-body">
-                        <p class="card-text text-right"><strong><%= dog1.name %></strong></p>
-                        <p class="card-text text-right">Price: $<%= dog1.price %></p>
-                        <p class="card-text text-right">Breed:<%= dog1.breed %></p>
-                      </div>
-                    <%end%>
-                  </div>
-                <% end %>
-
-              </div>
-            <% end %>
-          </div>
+        <%# card group 1 iteration %>
+        <div class="row no-gutters">
+          <% @dog_group1.each do |dog1|  %>
+            <div class="col-lg-4 pb-3">
+              <%= link_to dog_path(dog1) do %>
+                <div class = 'card-category'>
+                  <% if dog1.photo.present? %>
+                    <div class = "img-fluid rounded-start">
+                      <%= cl_image_tag dog1.photo.key, height: 150, width: 150, crop: :fill %>
+                    </div>
+                    <div class = 'text-muted'>
+                      <p class="card-text text-right"><strong><%= dog1.name %></strong></p>
+                      <p class="card-text text-right">Price: $<%= dog1.price %></p>
+                      <p class="card-text text-right">Breed:<%= dog1.breed %></p>
+                    </div>
+                  <%else%>
+                    <div class="card-body">
+                      <p class="card-text text-right"><strong><%= dog1.name %></strong></p>
+                      <p class="card-text text-right">Price: $<%= dog1.price %></p>
+                      <p class="card-text text-right">Breed:<%= dog1.breed %></p>
+                    </div>
+                  <%end%>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
+
       <div class="carousel-item">
-        <div class="group"style='position: fixed;right: 123px;top: 50px;'>
-          <div class="row no-gutters">
-            <% @dog_group2.each do |dog2|  %>
-              <div class="col-md-4 pb-3">
-                <%= link_to dog_path(dog2) do %>
-                  <div class="card-category">
-                    <% if dog2.photo.present? %>
-                      <div class = "img-fluid rounded-start">
-                        <%= cl_image_tag dog2.photo.key, height: 150, width: 150, crop: :fill %>
-                      </div>
-                      <div class = 'text-muted'>
-                        <p class="card-text text-right"><strong><%= dog2.name %></strong></p>
-                        <p class="card-text text-right">Price: $<%= dog2.price %></p>
-                        <p class="card-text text-right">Breed:<%= dog2.breed %></p>
-                      </div>
-                    <%else%>
-                      <div class="card-body">
-                        <p class="card-text text-right"><strong><%= dog2.name %></strong></p>
-                        <p class="card-text text-right">Price: $<%= dog2.price %></p>
-                        <p class="card-text text-right">Breed:<%= dog2.breed %></p>
-                      </div>
-                    <%end%>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+        <%# card group 2 iteration %>
+        <div class="row no-gutters">
+          <% @dog_group2.each do |dog2|  %>
+            <div class="col-md-4 pb-3">
+              <%= link_to dog_path(dog2) do %>
+                <div class="card-category">
+                  <% if dog2.photo.present? %>
+                    <div class = "img-fluid rounded-start">
+                      <%= cl_image_tag dog2.photo.key, height: 150, width: 150, crop: :fill %>
+                    </div>
+                    <div class = 'text-muted'>
+                      <p class="card-text text-right"><strong><%= dog2.name %></strong></p>
+                      <p class="card-text text-right">Price: $<%= dog2.price %></p>
+                      <p class="card-text text-right">Breed:<%= dog2.breed %></p>
+                    </div>
+                  <%else%>
+                    <div class="card-body">
+                      <p class="card-text text-right"><strong><%= dog2.name %></strong></p>
+                      <p class="card-text text-right">Price: $<%= dog2.price %></p>
+                      <p class="card-text text-right">Breed:<%= dog2.breed %></p>
+                    </div>
+                  <%end%>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+
   <button class="carousel-control-prev" style= 'max-width:50px;' type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>

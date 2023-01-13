@@ -1,13 +1,14 @@
 // Specific CSS for your home-page
 
+.card-category {
+  background: white!important;
+}
+
 .landing-page-carousel{
+  background: linear-gradient(180deg, rgba(173, 249, 173, 0) 30.95%, #ADF9AD 78.78%);
   height:240px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   display: flex;
   align-items: center;
-}
-
-.card-group {
-  align-content: center;
   justify-content: center;
-  }
+}
