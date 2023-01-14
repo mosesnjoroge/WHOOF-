@@ -6,16 +6,12 @@
   padding: 0;
   }
 </style>
-  <div class = 'map-dogs' data-controller="map"
-    id='map'
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-map-markers-value="<%= @markers.to_json %>"
-    >
-  </div>
-
-<%# style='width: 100%; height: 300px;' %>
-
-
+<div class = 'map-dogs' data-controller="map"
+  id='map'
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-map-markers-value="<%= @markers.to_json %>"
+  >
+</div>
 
 <div class="container py-3">
   <div class = "cards">
@@ -29,6 +25,7 @@
           <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
           <p class="card-text"> <strong> Price:$ </strong><%=@dog.price%></p>
           <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
+          <p class="card-text"> <strong> Address:</strong> <%= @dog.user.address %>
         </div>
         <%else%>
         <div class="card-text">
@@ -39,7 +36,7 @@
         </div>
         <%end%>
         <%= link_to 'Add a booking',new_dog_booking_path(@dog), class: 'btn btn-outline-success' %>
-
+<%= raise %>
         <%= link_to 'Back',dogs_path, class: 'btn btn-outline-danger' %>
       </div>
     </div>

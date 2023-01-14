@@ -1,6 +1,10 @@
 .map-dogs {
-  height: calc(50vh - 18px);
+  height: calc(50vh);
 }
 .mapboxgl-ctrl-attrib {
   display: none;
-  }
+}
+
+.mapbox-control-container{
+  display:none;
+}
