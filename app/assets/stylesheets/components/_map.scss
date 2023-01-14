@@ -1,10 +1,10 @@
-// .mapboxgl-popup {
-//   max-width: 10px;
-// }
+.map-dogs {
+  height: calc(50vh);
+}
+.mapboxgl-ctrl-attrib {
+  display: none;
+}
 
-// .mapboxgl-popup-content {
-//   text-align: center;
-//   font-family: "Open Sans", sans-serif;
-//   margin-bottom: 50px;
-//   border-radius: 10px !important;
-// }
+.mapbox-control-container{
+  display:none;
+}
