@@ -1,42 +1,44 @@
 <div class="container py-3">
-  <div class = "cards">
-      <div class="card">
-        <div class = "card-body">
-          <strong><%= @dog.name %> </strong>
-          <% if @dog.photo.present? %>
-          <div class="card-text">
-            <%= cl_image_tag @dog.photo.key, height: 200, width: 100, crop: :fit %>
-            <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
-            <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
-            <p class="card-text"> <strong> Price:$ </strong><%=@dog.price%></p>
-            <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
-          </div>
-          <%else%>
-          <div class="card-text">
-            <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
-            <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
-            <p class="card-text"> <strong> Price:$ </strong><%=@dog.price%></p>
-            <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
-          </div>
-          <%end%>
-          <%= link_to 'Add a booking',new_dog_booking_path(@dog), class: 'btn btn-outline-success' %>
-
-          <%= link_to 'Back',dogs_path, class: 'btn btn-outline-danger' %>
-        </div>
-      </div>
-  </div>
   <style>
-.marker {
-display: block;
-border: none;
-border-radius: 50%;
-cursor: pointer;
-padding: 0;
-}
-</style>
+    .marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    }
+  </style>
   <div data-controller="map"
-  id='map'
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEI'] %>"
-  data-map-markers-value="<%= @markers.to_json %>"
-  style='width: 100%; height: 500px;'></div>
+    id='map'
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEI'] %>"
+    data-map-markers-value="<%= @markers.to_json %>"
+    style='width: 100%; height: 250px;'></div>
+  </div>
+
+  <div class = "cards">
+    <div class="card">
+      <div class = "card-body">
+        <strong><%= @dog.name %> </strong>
+        <% if @dog.photo.present? %>
+        <div class="card-text">
+          <%= cl_image_tag @dog.photo.key, height: 200, width: 100, crop: :fit %>
+          <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
+          <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
+          <p class="card-text"> <strong> Price:$ </strong><%=@dog.price%></p>
+          <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
+        </div>
+        <%else%>
+        <div class="card-text">
+          <p class="card-text"> <strong> Name: </strong><%=@dog.name%></p>
+          <p class="card-text"> <strong> Breed: </strong> <%=@dog.breed%></p>
+          <p class="card-text"> <strong> Price:$ </strong><%=@dog.price%></p>
+          <p class="card-text"> <strong> Description: </strong><%=@dog.description%></p>
+        </div>
+        <%end%>
+        <%= link_to 'Add a booking',new_dog_booking_path(@dog), class: 'btn btn-outline-success' %>
+
+        <%= link_to 'Back',dogs_path, class: 'btn btn-outline-danger' %>
+      </div>
+    </div>
+  </div>
 </div>
