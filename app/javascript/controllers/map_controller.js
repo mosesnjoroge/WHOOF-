@@ -30,7 +30,6 @@ export default class extends Controller {
       customMarker.style.height = "65px"
       new mapboxgl.Marker({element :customMarker})
       .setLngLat([ marker.lng, marker.lat ])
-
       .addTo(this.map);
     })
   }
